@@ -44,7 +44,7 @@ module Integral
       end
 
       def for_select
-        DB.map { |record| [ record[:uid], record[:name] ] }
+        DB.map { |record| [ record[:name], record[:uid] ] }
       end
 
       def find_by(name: nil, uid: nil)
