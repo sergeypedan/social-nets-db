@@ -8,33 +8,37 @@ Gem::Specification.new do |spec|
   spec.version       = Integral::SocialNet::VERSION
   spec.authors       = ["Sergey Pedan"]
   spec.email         = ["sergey.pedan@gmail.com"]
+  spec.platform      = Gem::Platform::RUBY
 
   spec.summary       = "Non-comprehensive database of social nets with helpers (color, user page URL, FontAwesome icon etc.) packed in a Ruby gem."
   spec.description   = "Non-comprehensive database of social nets with helpers (color, user page URL, FontAwesome icon etc.) packed in a Ruby gem."
   spec.homepage      = "https://github.com/sergeypedan/integral-social-nets"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata = {
+    "changelog_uri"     => "https://github.com/sergeypedan/integral-social-nets/blob/master/CHANGELOG.md",
+    "homepage_uri"      => spec.homepage,
+    "source_code_uri"   => "https://github.com/sergeypedan/integral-social-nets.git"
+  }
 
-    spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/sergeypedan/integral-social-nets.git"
-    spec.metadata["changelog_uri"] = "https://github.com/sergeypedan/integral-social-nets/blob/master/CHANGELOG.md"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
-
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.files = Dir["lib/**/*"]
+  spec.extra_rdoc_files = Dir["README*", "LICENSE*"]
+
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler-audit"
+  spec.add_development_dependency "gemsmith"
+  spec.add_development_dependency "git-cop"
+  spec.add_development_dependency "guard-rspec"
+  spec.add_development_dependency "pry"
+  spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "reek"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop-rspec"
+
 end
