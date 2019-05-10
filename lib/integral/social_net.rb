@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "integral/social_net/version"
 
 module Integral
@@ -177,10 +179,10 @@ module Integral
     end
 
 
-    def page_url(uid)
-      validate_presence! uid
-      return unless record[:page_url]
-      record[:page_url].sub("${uid}", uid)
+    def page_url(username, account_id)
+      fail ArgumentError, "Either a username or an account id must be provided" if [username, account_id].all?(&:nil?)
+      return record[:page_url][:by_username  ].sub "${username}",   uid        if username
+      return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id
     end
 
 
