@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "integral/social_net/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "integral-social_net"
+  spec.name          = "integral-social_nets"
   spec.version       = Integral::SocialNet::VERSION
   spec.authors       = ["Sergey Pedan"]
   spec.email         = ["sergey.pedan@gmail.com"]
