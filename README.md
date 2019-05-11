@@ -8,6 +8,8 @@ Add this line to your application's `Gemfile`:
 gem "integral-social_nets", github: "sergeypedan/integral-social-nets", require: "integral-social_net"
 ```
 
+Note that it's necessary to add `require: "integral-social_net"` because the gem name `integral-social_nets` (plural) does not match the base class name `integral/social_net.rb` (singular).
+
 And then execute:
 
 ```sh
