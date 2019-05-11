@@ -11,12 +11,26 @@ require_relative "../tag_helper"
       def fa_icon(**options)
         color = options.has_key?(:color) ? !!options.delete(:color) : true
 
-        default_attributes = {
-          class: ["fa", "fa-#{fa_id}"],
-          style: ("color: #{record[:color]}" if color)
+        (options = {}) unless options.is_a?(Hash)
+
+        defaults = {
+          style: ("color: #{record[:color]}" if color),
+          class: ["fa", "fa-#{fa_id}"]
         }
-        default_attributes = default_attributes.merge(options) if options.is_a?(Hash)
-        attributes_str = tag_attributes_to_s(default_attributes)
+
+        style_value = if options.has_key? :style
+                        [defaults[:style], "#{options.delete(:style)};"].join("; ").gsub(";;", ";")
+                      else
+                        defaults[:style]
+                      end
+
+        class_value = if options.has_key? :class
+                        [defaults[:class], options.delete(:class)]
+                      else
+                        defaults[:class]
+                      end
+
+        attributes_str = tag_attributes_to_s({ class: class_value, style: style_value }.merge(options))
 
         return "<span #{attributes_str}></span>"
       end

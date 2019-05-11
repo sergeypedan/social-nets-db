@@ -26,4 +26,26 @@ RSpec.describe Integral::SocialNet, "#fa_icon" do
     end
   end
 
+  context "with `color: true` && style value" do
+    context "style ends with ;" do
+      it do
+        result = subject.fa_icon(color: true, style: "margin-top: 10px;")
+        expect(result).to eq "<span class=\"fa fa-facebook\" style=\"color: #3C5A99; margin-top: 10px;\"></span>"
+      end
+    end
+    context "style ends without ;" do
+      it do
+        result = subject.fa_icon(color: true, style: "margin-top: 10px")
+        expect(result).to eq "<span class=\"fa fa-facebook\" style=\"color: #3C5A99; margin-top: 10px;\"></span>"
+      end
+    end
+  end
+
+  context "with `color: true` && style value && class value" do
+    it do
+      result = subject.fa_icon(color: true, style: "margin-top: 10px;", class: "my-class")
+      expect(result).to eq "<span class=\"fa fa-facebook my-class\" style=\"color: #3C5A99; margin-top: 10px;\"></span>"
+    end
+  end
+
 end
