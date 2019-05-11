@@ -7,7 +7,7 @@ module Integral
   class SocialNet
 
     def initialize(uid)
-      fail ArgumentError, "`uid` must be provided, you passed #{uid.inspect}" if uid.nil? || uid == ""
+      fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present?(uid)
       record || fail(ArgumentError, "Social net with `uid` #{uid} not supported. Currently supported: #{self.class.uids.join(", ")}")
       @uid = uid
     end
@@ -23,13 +23,17 @@ module Integral
     end
 
     def page_url(username: nil, account_id: nil)
-      return record[:page_url][:by_username  ].sub "${username}",   username   if username   && (username   != "")
-      return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id && (account_id != "")
+      return record[:page_url][:by_username  ].sub "${username}",   username   if present?(username)
+      return record[:page_url][:by_account_id].sub "${account_id}", account_id if present?(account_id)
       fail ArgumentError, "Either a username or an account id must be provided"
     end
 
     def record
       @record ||= self.class.find_by(uid: @uid)
+    end
+
+    private def present?(string)
+      string && string != ""
     end
 
 
@@ -46,9 +50,9 @@ module Integral
       end
 
       def find_by(name: nil, uid: nil)
-        return DB.select { |record| record[:uid]  == uid  }.first if uid  && (uid  != "")
-        return DB.select { |record| record[:name] == name }.first if name && (name != "")
-        fail ArgumentError, "Either `name` or `uid` must be provided"
+        return DB.select { |record| record[:uid]  == uid  }.first if present?(uid)
+        return DB.select { |record| record[:name] == name }.first if present?(name)
+        fail ArgumentError, "`name:` or `uid:` must be provided. You are passing name: #{name.inspect}, uid: '#{uid.inspect}'"
       end
 
       def names
