@@ -50,12 +50,19 @@ Integral::SocialNet.new("test")
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
 
-social_net.fa_icon     #=> <span class="fa fa-facebook" style="color: blue"></span>>
-social_net.color       #=> "crimson"
+social_net.color       #=> "#3C5A99"
 social_net.fa_icon_id  #=> "facebook"
 social_net.name        #=> "Facebook"
 social_net.uid         #=> "facebook"
 social_net.url         #=> "https://facebook.com"
+```
+
+### FontAwesome icon
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.fa_icon  #=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
 ```
 
 ### User's page URL
@@ -108,7 +115,9 @@ This gem is Rails-agnostic, but you can use it in Rails like so:
 model User
   has_many :social_net_accounts
 end
+```
 
+```ruby
 model SocialNetAccount
   belongs_to :user
 

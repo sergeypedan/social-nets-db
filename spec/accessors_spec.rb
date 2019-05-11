@@ -7,7 +7,7 @@ RSpec.describe Integral::SocialNet do
   subject { described_class.new("facebook") }
 
   describe "#color" do
-    it do expect(subject.color).to eq "#3b5998" end
+    it do expect(subject.color).to eq "#3C5A99" end
   end
 
   describe "#fa_id" do
