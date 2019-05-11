@@ -80,8 +80,8 @@ module Integral
         color: "#e1306c",
         url:  "https://instagram.com",
         user_page: {
-          by_username:   "https://instagram.com/${username}",
-          by_account_id: "https://instagram.com/${account_id}"
+          by_username:   "https://www.instagram.com/${username}",
+          by_account_id: nil
         }
       }, {
         name:  "LiveJournal",
