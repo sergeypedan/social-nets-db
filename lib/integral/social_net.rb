@@ -7,8 +7,8 @@ module Integral
   class SocialNet
 
     def initialize(uid)
-      validate_presence!(uid)
-      self.class.find_by(uid: uid) || fail(ArgumentError, "Social net with `uid` #{uid} not supported. Currently supported: #{self.class.uids.join(", ")}")
+      fail ArgumentError, "`uid` must be provided, you passed #{uid.inspect}" if uid.nil? || uid == ""
+      record || fail(ArgumentError, "Social net with `uid` #{uid} not supported. Currently supported: #{self.class.uids.join(", ")}")
       @uid = uid
     end
 
@@ -22,7 +22,7 @@ module Integral
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
       define_method(method_symbol) do
-        record[method_symbol]
+        self.record[method_symbol]
       end
     end
 
@@ -32,12 +32,8 @@ module Integral
       fail ArgumentError, "Either a username or an account id must be provided"
     end
 
-    private def record
-      self.class.find_by(uid: @uid)
-    end
-
-    private def validate_presence!(uid)
-      fail ArgumentError, "`uid` must be provided, you passed #{uid.inspect}" if uid.nil? || uid == ""
+    def record
+      @record ||= self.class.find_by(uid: @uid)
     end
 
 
