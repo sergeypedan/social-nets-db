@@ -62,7 +62,26 @@ social_net.url         #=> "https://facebook.com"
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
 
-social_net.fa_icon  #=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
+social_net.fa_icon
+#=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
+```
+
+It accepts a Hash with attributes, like Rails `tag_helper` (but for `data: {}` — maybe later):
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.fa_icon(class: "fa-fw", id: "my-id", style: "margin-top: 10px")
+#=> <span class="fa fa-facebook fa-fw" style="color: #3C5A99; margin-top: 10px;" id="my-id"></span>
+```
+
+Exporting social net brand color to `styles` attribute can be turned off by passing `color: false` Hash pair among others:
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.fa_icon(color: false, class: "fa-fw", id: "my-id", style: "margin-top: 10px")
+#=> <span class="fa fa-facebook fa-fw" style="cmargin-top: 10px;" id="my-id"></span>
 ```
 
 ### User's page URL
