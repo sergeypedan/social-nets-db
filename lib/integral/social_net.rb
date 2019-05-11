@@ -2,14 +2,19 @@
 
 require_relative "social_net/version"
 require_relative "social_net/data"
+require_relative "social_net/support"
 
 module Integral
   class SocialNet
 
+    # To have methods both on class & instance
+    extend  Support
+    include Support
+
     def initialize(uid)
-      fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present?(uid)
-      record || fail(ArgumentError, "Social net with `uid` #{uid} not supported. Currently supported: #{self.class.uids.join(", ")}")
+      fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present_str?(uid)
       @uid = uid
+      fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless record
     end
 
     def fa_icon
@@ -23,17 +28,14 @@ module Integral
     end
 
     def page_url(username: nil, account_id: nil)
-      return record[:page_url][:by_username  ].sub "${username}",   username   if present?(username)
-      return record[:page_url][:by_account_id].sub "${account_id}", account_id if present?(account_id)
+      return record[:page_url][:by_username  ].sub "${username}",   username   if present_str?(username)
+      return record[:page_url][:by_account_id].sub "${account_id}", account_id if present_str?(account_id)
       fail ArgumentError, "Either a username or an account id must be provided"
     end
 
     def record
-      @record ||= self.class.find_by(uid: @uid)
-    end
-
-    private def present?(string)
-      string && string != ""
+      fail StandardError, "@uid is nil" if @uid.nil?
+      self.class.find_by(uid: @uid)
     end
 
 
@@ -50,9 +52,9 @@ module Integral
       end
 
       def find_by(name: nil, uid: nil)
-        return DB.select { |record| record[:uid]  == uid  }.first if present?(uid)
-        return DB.select { |record| record[:name] == name }.first if present?(name)
-        fail ArgumentError, "`name:` or `uid:` must be provided. You are passing name: #{name.inspect}, uid: '#{uid.inspect}'"
+        return DB.select { |record| record[:uid]  == uid  }.first if present_str?(uid)
+        return DB.select { |record| record[:name] == name }.first if present_str?(name)
+        fail ArgumentError, "`name:` or `uid:` must be provided. You are passing name: #{name.inspect}, uid: #{uid.inspect}"
       end
 
       def names

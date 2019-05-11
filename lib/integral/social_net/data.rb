@@ -7,7 +7,7 @@ module Integral
         name:  "Behance",
         uid:   "behance",
         fa_id: "behance",
-        color: "crimson",
+        color: "#1769ff",
         url:  "https://behance.com",
         user_page: {
           by_username:   "https://behance.com/${username}",
@@ -17,7 +17,7 @@ module Integral
         name:  "Dribble",
         uid:   "dribble",
         fa_id: "dribble",
-        color: "crimson",
+        color: "#ea4c89",
         url:  "https://dribble.com",
         user_page: {
           by_username:   "https://dribble.com/${username}",
@@ -27,7 +27,7 @@ module Integral
         name:  "Facebook",
         uid:   "facebook",
         fa_id: "facebook",
-        color: "crimson",
+        color: "#3C5A99",
         url:  "https://facebook.com",
         user_page: {
           by_username:   "https://facebook.com/${username}",
@@ -37,7 +37,7 @@ module Integral
         name:  "GitHub",
         uid:   "github",
         fa_id: "github",
-        color: "crimson",
+        color: "#333333",
         url:  "https://github.com",
         user_page: {
           by_username:   "https://github.com/${username}",
@@ -47,7 +47,7 @@ module Integral
         name:  "Instagram",
         uid:   "instagram",
         fa_id: "instagram",
-        color: "crimson",
+        color: "#e1306c",
         url:  "https://instagram.com",
         user_page: {
           by_username:   "https://instagram.com/${username}",
@@ -67,17 +67,17 @@ module Integral
         name:  "LinkedIn",
         uid:   "linkedin",
         fa_id: "linkedin",
-        color: "",
+        color: "#0077b5",
         url:  "https://linkedin.com",
         user_page: {
           by_username:   "https://linkedin.com/in/${username}",
           by_account_id: nil
         }
       }, {
-        name:  "LiveJournal",
+        name:  "Medium",
         uid:   "medium",
         fa_id: "medium",
-        color: "",
+        color: "#00ab6c",
         url:  "https://medium.com",
         user_page: {
           by_username:   "https://${username}.medium.com",
@@ -107,7 +107,7 @@ module Integral
         name:  "StackOverflow",
         uid:   "stackoverflow",
         fa_id: "stackoverflow",
-        color: "crimson",
+        color: "#F48024",
         url:  "https://stackoverflow.com",
         user_page: {
           by_username:   "https://stackoverflow.com/${username}",
@@ -117,7 +117,7 @@ module Integral
         name:  "Telegram",
         uid:   "telegram",
         fa_id: "telegram",
-        color: "crimson",
+        color: "#0088cc",
         url:  "https://telegram.com",
         user_page: {
           by_username:   "https://telegram.com/${username}",
@@ -127,7 +127,7 @@ module Integral
         name:  "Twitter",
         uid:   "twitter",
         fa_id: "twitter",
-        color: "crimson",
+        color: "#1da1f2",
         url:  "https://twitter.com",
         user_page: {
           by_username:   "https://twitter.com/${username}",
@@ -137,7 +137,7 @@ module Integral
         name:  "Вконтакте",
         uid:   "vkontakte",
         fa_id: "vk",
-        color: "crimson",
+        color: "#45668e",
         url:  "https://vkontakte.com",
         user_page: {
           by_username:   "https://vkontakte.com/${username}",
@@ -147,7 +147,7 @@ module Integral
         name:  "YouTube",
         uid:   "youtube",
         fa_id: "youtube",
-        color: "crimson",
+        color: "#ff0000",
         url:  "https://youtube.com",
         user_page: {
           by_username:   "https://youtube.com/${username}",
