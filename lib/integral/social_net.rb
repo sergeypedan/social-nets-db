@@ -23,8 +23,8 @@ module Integral
     end
 
     def page_url(username: nil, account_id: nil)
-      return record[:page_url][:by_username  ].sub "${username}",   uid        if username
-      return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id
+      return record[:page_url][:by_username  ].sub "${username}",   username   if username   && (username   != "")
+      return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id && (account_id != "")
       fail ArgumentError, "Either a username or an account id must be provided"
     end
 
@@ -46,9 +46,9 @@ module Integral
       end
 
       def find_by(name: nil, uid: nil)
-        fail ArgumentError, "Either `name` or `uid` must be provided" if [name, uid].all?(&:nil?)
-        return DB.select { |record| record[:name] == name }.first unless uid
-        return DB.select { |record| record[:uid]  == uid  }.first unless name
+        return DB.select { |record| record[:uid]  == uid  }.first if uid  && (uid  != "")
+        return DB.select { |record| record[:name] == name }.first if name && (name != "")
+        fail ArgumentError, "Either `name` or `uid` must be provided"
       end
 
       def names
