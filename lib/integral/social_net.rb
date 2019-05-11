@@ -20,6 +20,12 @@ module Integral
       "<span class=\"fa fa-#{fa_icon_id}\" style=\"color: #{record[:color]}\"></span>".html_safe
     end
 
+    [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
+      define_method(method_symbol) do
+        record[method_symbol]
+      end
+    end
+
     def page_url(username: nil, account_id: nil)
       return record[:page_url][:by_username  ].sub "${username}",   uid        if username
       return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id
