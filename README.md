@@ -16,36 +16,6 @@ bundle install
 
 ## Usage
 
-### Select in forms
-
-```ruby
-.form-group
-  = f.label  :social_net_uid, class: "control-label"
-  = f.select :social_net_uid, Integral::SocialNet.select_options, {}, class: "form-control"
-```
-
-### Accessing properties
-
-```ruby
-social_net = Integral::SocialNet.new("facebook")
-
-social_net.fa_icon     #=> <span class="fa fa-facebook" style="color: blue"></span>>
-social_net.color       #=> "crimson"
-social_net.fa_icon_id  #=> "facebook"
-social_net.name        #=> "Facebook"
-social_net.uid         #=> "facebook"
-social_net.url         #=> "https://facebook.com"
-```
-
-### User' page URL
-
-```ruby
-social_net = Integral::SocialNet.new("facebook")
-
-social_net.page_url(username: "dhh")              #=> "https://facebook.com/dhh"
-social_net.page_url(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
-```
-
 ### Self
 
 ```ruby
@@ -63,6 +33,61 @@ social_net.record
     by_account_id: "https://facebook.com/${account_id}"
   }
 }
+```
+
+### Accessors
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.fa_icon     #=> <span class="fa fa-facebook" style="color: blue"></span>>
+social_net.color       #=> "crimson"
+social_net.fa_icon_id  #=> "facebook"
+social_net.name        #=> "Facebook"
+social_net.uid         #=> "facebook"
+social_net.url         #=> "https://facebook.com"
+```
+
+### User's page URL
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.page_url(username: "dhh")              #=> "https://facebook.com/dhh"
+social_net.page_url(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
+```
+
+### Select in Rails forms
+
+```ruby
+= form_for @user do |f|
+  = f.fields_for :social_net_accounts do |sna|
+    .form-group
+      = sna.label  :social_net_uid, class: "control-label"
+      = sna.select :social_net_uid, Integral::SocialNet.select_options, {}, class: "form-control"
+```
+
+because
+
+```ruby
+Integral::SocialNet.select_options
+#=> [
+#     ["Behance",       "behance"],
+#     ["Dribble",       "dribble"],
+#     ["Facebook",      "facebook"],
+#     ["GitHub",        "github"],
+#     ["Instagram",     "instagram"],
+#     ["LiveJournal",   "livejournal"],
+#     ["LinkedIn",      "linkedin"],
+#     ["Medium",        "medium"],
+#     ["Мой мир",       "my.mail.ru"],
+#     ["Одноклассники", "odnoklassniki"],
+#     ["StackOverflow", "stackoverflow"],
+#     ["Telegram",      "telegram"],
+#     ["Twitter",       "twitter"],
+#     ["Вконтакте",     "vkontakte"],
+#     ["YouTube",       "youtube"]
+#  ]
 ```
 
 ### Assumptions
