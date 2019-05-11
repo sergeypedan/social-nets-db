@@ -20,14 +20,14 @@ module Integral
       "<span class=\"fa fa-#{fa_icon_id}\" style=\"color: #{record[:color]}\"></span>".html_safe
     end
 
-    def page_url(username, account_id)
-      fail ArgumentError, "Either a username or an account id must be provided" if [username, account_id].all?(&:nil?)
+    def page_url(username: nil, account_id: nil)
       return record[:page_url][:by_username  ].sub "${username}",   uid        if username
       return record[:page_url][:by_account_id].sub "${account_id}", account_id if account_id
+      fail ArgumentError, "Either a username or an account id must be provided"
     end
 
     private def record
-      self.class.find_by(name: @name)
+      self.class.find_by(uid: @uid)
     end
 
     private def validate_presence!(uid)
