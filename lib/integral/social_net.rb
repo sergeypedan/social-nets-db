@@ -17,8 +17,9 @@ module Integral
       fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless record
     end
 
-    def fa_icon
-      "<span class=\"fa fa-#{fa_id}\" style=\"color: #{record[:color]}\"></span>".html_safe
+    def fa_icon(color: true)
+      color_attribute = color ? " style=\"color: #{record[:color]}\"" : nil
+      "<span class=\"fa fa-#{fa_id}\"#{color_attribute}></span>"
     end
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
