@@ -22,19 +22,27 @@ bundle install
 
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
+# => #<Integral::SocialNet:0x00007fddc0041b40 @uid="facebook">
 
 social_net.record
 # => {
-  name:  "Facebook",
-  uid:   "facebook",
-  fa_id: "facebook",
-  color: "crimson",
-  url:  "https://facebook.com",
-  user_page: {
-    by_username:   "https://facebook.com/${username}",
-    by_account_id: "https://facebook.com/${account_id}"
-  }
-}
+#      name:  "Facebook",
+#      uid:   "facebook",
+#      fa_id: "facebook",
+#      color: "crimson",
+#      url:  "https://facebook.com",
+#      user_page: {
+#        by_username:   "https://facebook.com/${username}",
+#        by_account_id: "https://facebook.com/${account_id}"
+#      }
+#    }
+```
+
+It will raise an exception if you pass an unrecognized UID:
+
+```ruby
+Integral::SocialNet.new("test")
+# ArgumentError (Social net with UID test is not supported. Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
 ```
 
 ### Accessors
