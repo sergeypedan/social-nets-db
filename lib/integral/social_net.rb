@@ -12,12 +12,8 @@ module Integral
       @uid = uid
     end
 
-    def fa_icon_id
-      record[:fa_icon]
-    end
-
     def fa_icon
-      "<span class=\"fa fa-#{fa_icon_id}\" style=\"color: #{record[:color]}\"></span>".html_safe
+      "<span class=\"fa fa-#{fa_id}\" style=\"color: #{record[:color]}\"></span>".html_safe
     end
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
@@ -45,7 +41,7 @@ module Integral
         DB
       end
 
-      def for_select
+      def select_options
         DB.map { |record| [ record[:name], record[:uid] ] }
       end
 

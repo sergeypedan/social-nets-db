@@ -1,38 +1,103 @@
 # Integral::SocialNet
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/integral/social_net`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
-gem 'integral-social_net'
+gem "integral-social_nets", github: "sergeypedan/integral-social-nets", require: "integral-social_net"
 ```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install integral-social_net
+```sh
+bundle install
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Select in forms
 
-## Development
+```ruby
+.form-group
+  = f.label  :social_net_uid, class: "control-label"
+  = f.select :social_net_uid, Integral::SocialNet.select_options, {}, class: "form-control"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Accessing properties
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.fa_icon     #=> <span class="fa fa-facebook" style="color: blue"></span>>
+social_net.color       #=> "crimson"
+social_net.fa_icon_id  #=> "facebook"
+social_net.name        #=> "Facebook"
+social_net.uid         #=> "facebook"
+social_net.url         #=> "https://facebook.com"
+```
+
+### User' page URL
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.page_url(username: "dhh")              #=> "https://facebook.com/dhh"
+social_net.page_url(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
+```
+
+### Self
+
+```ruby
+social_net = Integral::SocialNet.new("facebook")
+
+social_net.record
+# => {
+  name:  "Facebook",
+  uid:   "facebook",
+  fa_id: "facebook",
+  color: "crimson",
+  url:  "https://facebook.com",
+  user_page: {
+    by_username:   "https://facebook.com/${username}",
+    by_account_id: "https://facebook.com/${account_id}"
+  }
+}
+```
+
+### Assumptions
+
+This gem is Rails-agnostic, but you can use it in Rails like so:
+
+```ruby
+model User
+  has_many :social_net_accounts
+end
+
+model SocialNetAccount
+  belongs_to :user
+
+  def social_net
+    @social_net ||= Integral::SocialNet.new(self.social_net_uid)
+  end
+
+  def page_url
+    social_net.page_url(username: self.username, account_id: self.account_number)
+  end
+
+  #  id                                            :bigint           not null, primary key
+  #  user_id                                       :bigint           not null
+
+  #  account_id(for example, `id1230948712034871`) :string
+  #  social_net_uid(`facebook`, `vkontakte` etc.)  :string           not null
+  #  username(for example, `tenderlove`)           :string
+  #  userpic_url                                   :string
+end
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/integral-social_net.
+Fork and build your own — or send pull requests.
 
 ## License
 
