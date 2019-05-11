@@ -34,6 +34,36 @@ module Integral
           by_account_id: "https://facebook.com/${account_id}"
         }
       }, {
+        name:  "FL",
+        uid:   "fl.ru",
+        fa_id: nil,
+        color: "#4ea828",
+        url:  "https://fl.ru",
+        user_page: {
+          by_username:   "https://www.fl.ru/users/${username}/",
+          by_account_id: nil
+        }
+      }, {
+        name:  "Фрилансим",
+        uid:   "freelansim",
+        fa_id: nil,
+        color: "#4abfb4",
+        url:  "https://freelansim.ru",
+        user_page: {
+          by_username:   "https://freelansim.ru/freelancers/${username}",
+          by_account_id: nil
+        }
+      }, {
+        name:  "Habrahabr",
+        uid:   "habr",
+        fa_id: nil,
+        color: "#65a3be",
+        url:  "https://habr.com",
+        user_page: {
+          by_username:   "https://habr.com/ru/users/${username}/",
+          by_account_id: nil
+        }
+      }, {
         name:  "GitHub",
         uid:   "github",
         fa_id: "github",
@@ -132,6 +162,16 @@ module Integral
         user_page: {
           by_username:   "https://twitter.com/${username}",
           by_account_id: nil
+        }
+      }, {
+        name:  "UpWork",
+        uid:   "upwork",
+        fa_id: "upwork",
+        color: "#37A000",
+        url:  "https://upwork.com",
+        user_page: {
+          by_username:   nil,
+          by_account_id: "https://www.upwork.com/freelancers/~${account_id}"
         }
       }, {
         name:  "Вконтакте",
