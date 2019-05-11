@@ -3,6 +3,7 @@
 require_relative "social_net/version"
 require_relative "social_net/data"
 require_relative "social_net/support"
+require_relative "social_net/font_awesome"
 
 module Integral
   class SocialNet
@@ -10,16 +11,12 @@ module Integral
     # To have methods both on class & instance
     extend  Support
     include Support
+    include FontAwesome
 
     def initialize(uid)
       fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present_str?(uid)
       @uid = uid
       fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless record
-    end
-
-    def fa_icon(color: true)
-      color_attribute = color ? " style=\"color: #{record[:color]}\"" : nil
-      "<span class=\"fa fa-#{fa_id}\"#{color_attribute}></span>"
     end
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    integral-social_nets (0.1.9)
+    integral-social_nets (0.1.10)
 
 GEM
   remote: https://rubygems.org/
