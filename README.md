@@ -93,6 +93,8 @@ social_net.page_url(username: "dhh")              #=> "https://facebook.com/dhh"
 social_net.page_url(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
 ```
 
+If you pass a username, whild the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
+
 ### Select in Rails forms
 
 ```ruby
