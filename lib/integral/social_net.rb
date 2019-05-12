@@ -27,8 +27,8 @@ module Integral
 
     def user_page(username: nil, account_id: nil)
       fail ArgumentError, "Either a username or an account id must be provided" if !present_str?(username) && !present_str?(account_id)
-      return record[:user_page][:by_username  ].sub "${username}",   username    if username
-      return record[:user_page][:by_account_id].sub "${account_id}", account_id  if account_id
+      return record[:user_page][:by_username  ].sub "${username}",   username    if username   && present_str?(record[:user_page][:by_username])
+      return record[:user_page][:by_account_id].sub "${account_id}", account_id  if account_id && present_str?(record[:user_page][:by_account_id])
     end
 
     def record
