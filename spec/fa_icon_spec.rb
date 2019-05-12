@@ -4,11 +4,20 @@ require "spec_helper"
 
 RSpec.describe Integral::SocialNet, "#fa_icon" do
 
-  subject { described_class.new("facebook") }
+  subject { described_class.new(social_net_uid) }
+
+  let(:social_net_uid) { "facebook" }
 
   context "without arguments" do
     it do
       expect(subject.fa_icon).to eq "<span class=\"fa fa-facebook\" style=\"color: #3C5A99\"></span>"
+    end
+  end
+
+  context "when fa_id is missing in the DB" do
+    let(:social_net_uid) { "freelansim" }
+    it "returns nil" do
+      expect(subject.fa_icon).to be_nil
     end
   end
 

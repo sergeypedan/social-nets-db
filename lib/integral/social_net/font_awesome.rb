@@ -9,6 +9,8 @@ require_relative "../tag_helper"
       include TagHelper
 
       def fa_icon(**options)
+        return unless fa_id
+
         color = options.has_key?(:color) ? !!options.delete(:color) : true
 
         (options = {}) unless options.is_a?(Hash)
