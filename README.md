@@ -39,7 +39,7 @@ Everything else is just helpers around this simple DB: finders, accessors & view
 
 ## Usage
 
-### Self
+### Instance of `Integral::SocialNet` class
 
 Initialize an instance with social net UID.
 
