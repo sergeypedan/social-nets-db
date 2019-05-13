@@ -10,6 +10,33 @@ Note that it's necessary to add `require: "integral-social_net"` because the 
 
 Alternatively, you can omit requiring `"integral-social_net"` in `Gemfile` and require it somewhere within the application (`application.rb` in Rails, for example)
 
+
+## Internals
+
+It stores data about social nets in a Ruby hash like so:
+
+```ruby
+DB = [
+  {
+    name:  "Behance",
+    uid:   "behance",
+    fa_id: "behance",
+    color: "#1769ff",
+    url:  "https://behance.com",
+    user_page: {
+      by_username:   "https://behance.com/${username}",
+      by_account_id: "https://behance.com/${account_id}"
+    }
+  },
+  # ...
+]
+```
+
+[Peek into the source](https://github.com/sergeypedan/integral-social-nets/blob/master/lib/integral/social_net/data.rb).
+
+Everything else is just helpers around this simple DB: finders, accessors & view helpers.
+
+
 ## Usage
 
 ### Self
@@ -89,7 +116,12 @@ social_net.user_page(account_id: "id1234566789")   #=> "https://facebook.com/acc
 
 If you pass a username, whild the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
 
-### Select in Rails forms
+
+## Use with Rails
+
+This gem is Rails-agnostic, but you can use it in Rails like so:
+
+### Forms
 
 ```ruby
 = form_for @user do |f|
@@ -122,9 +154,7 @@ Integral::SocialNet.select_options
 #  ]
 ```
 
-### Use with Rails
-
-This gem is Rails-agnostic, but you can use it in Rails like so:
+### Models
 
 ```ruby
 model User < ApplicationRecord
@@ -166,9 +196,11 @@ social_net_account = SocialNetAccount.create(user_id: @user.id, social_net_uid: 
 @user.social_net_accounts.first.user_page  #=> "https://facebook.com/tenderlove"
 ```
 
+
 ## Contributing
 
 Fork and build your own — or send a pull request.
+
 
 ## License
 
