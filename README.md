@@ -166,6 +166,10 @@ end
 model SocialNetAccount < ApplicationRecord
   belongs_to :user
 
+  validates :account_id,     presence: true, if: Proc.new { |record| record.username.blank? }
+  validates :social_net_uid, presence: true, inclusion: { in: Integral::SocialNet.uids }
+  validates :username,       presence: true, if: Proc.new { |record| record.account_id.blank? }
+
   def social_net
     @social_net ||= Integral::SocialNet.new(self.social_net_uid)
   end
