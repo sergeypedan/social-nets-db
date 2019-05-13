@@ -2,19 +2,13 @@
 
 ## Installation
 
-Add this line to your application's `Gemfile`:
-
 ```ruby
 gem "integral-social_nets", github: "sergeypedan/integral-social-nets", require: "integral-social_net"
 ```
 
-Note that it's necessary to add `require: "integral-social_net"` because the gem name `integral-social_nets` (plural) does not match the base class name `integral/social_net.rb` (singular).
+Note that it's necessary to add `require: "integral-social_net"` because the gem name `integral-social_nets` (plural) does not match the base class name `integral/social_net.rb` (singular).
 
-And then execute:
-
-```sh
-bundle install
-```
+Alternatively, you can omit requiring `"integral-social_net"` in `Gemfile` and require it somewhere within the application (`application.rb` in Rails, for example)
 
 ## Usage
 
@@ -38,14 +32,14 @@ social_net.record
 #    }
 ```
 
-It will raise an exception if you pass an unrecognized UID:
+It will raise an exception if you pass an unrecognized UID:
 
 ```ruby
 Integral::SocialNet.new("test")
 # ArgumentError (Social net with UID test is not supported. Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
 ```
 
-### Accessors
+### Property accessors
 
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
@@ -59,6 +53,8 @@ social_net.url         #=> "https://facebook.com"
 
 ### FontAwesome icon
 
+Assumes you have [FontAwesome](https://fontawesome.com/v4.7.0/) installed. Just builds the HTML tag.
+
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
 
@@ -66,7 +62,7 @@ social_net.fa_icon
 #=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
 ```
 
-It accepts a Hash with attributes, like Rails `tag_helper` (but for `data: {}` — maybe later):
+It accepts a Hash with attributes, like Rails `tag_helper` (but not for `data: {}` — maybe later):
 
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
@@ -162,7 +158,7 @@ end
 
 ## Contributing
 
-Fork and build your own — or send pull requests.
+Fork and build your own — or send a pull request.
 
 ## License
 
