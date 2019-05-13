@@ -14,10 +14,25 @@ Alternatively, you can omit requiring `"integral-social_net"` in `Gemfile` and r
 
 ### Self
 
+Initialize an instance with social net UID.
+
 ```ruby
 social_net = Integral::SocialNet.new("facebook")
 # => #<Integral::SocialNet:0x00007fddc0041b40 @uid="facebook">
+```
 
+Which are supported UIDs? Try an unsupported UID, and you will get the list:
+
+```ruby
+Integral::SocialNet.new("diaspora")
+# ArgumentError (Social net with UID test is not supported.
+#
+# Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
+```
+
+### Data
+
+```ruby
 social_net.record
 # => {
 #      name:  "Facebook",
@@ -32,18 +47,9 @@ social_net.record
 #    }
 ```
 
-It will raise an exception if you pass an unrecognized UID:
-
-```ruby
-Integral::SocialNet.new("test")
-# ArgumentError (Social net with UID test is not supported. Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
-```
-
 ### Property accessors
 
 ```ruby
-social_net = Integral::SocialNet.new("facebook")
-
 social_net.color       #=> "#3C5A99"
 social_net.fa_icon_id  #=> "facebook"
 social_net.name        #=> "Facebook"
@@ -56,8 +62,6 @@ social_net.url         #=> "https://facebook.com"
 Assumes you have [FontAwesome](https://fontawesome.com/v4.7.0/) installed. Just builds the HTML tag.
 
 ```ruby
-social_net = Integral::SocialNet.new("facebook")
-
 social_net.fa_icon
 #=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
 ```
@@ -65,8 +69,6 @@ social_net.fa_icon
 It accepts a Hash with attributes, like Rails `tag_helper` (but not for `data: {}` — maybe later):
 
 ```ruby
-social_net = Integral::SocialNet.new("facebook")
-
 social_net.fa_icon(class: "fa-fw", id: "my-id", style: "margin-top: 10px")
 #=> <span class="fa fa-facebook fa-fw" style="color: #3C5A99; margin-top: 10px;" id="my-id"></span>
 ```
@@ -74,8 +76,6 @@ social_net.fa_icon(class: "fa-fw", id: "my-id", style: "margin-top: 10px")
 Exporting social net brand color to `styles` attribute can be turned off by passing `color: false` Hash pair among others:
 
 ```ruby
-social_net = Integral::SocialNet.new("facebook")
-
 social_net.fa_icon(color: false, class: "fa-fw", id: "my-id", style: "margin-top: 10px")
 #=> <span class="fa fa-facebook fa-fw" style="cmargin-top: 10px;" id="my-id"></span>
 ```
@@ -83,10 +83,8 @@ social_net.fa_icon(color: false, class: "fa-fw", id: "my-id", style: "margin-top
 ### User's page URL
 
 ```ruby
-social_net = Integral::SocialNet.new("facebook")
-
-social_net.page_url(username: "dhh")              #=> "https://facebook.com/dhh"
-social_net.page_url(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
+social_net.user_page(username: "dhh")              #=> "https://facebook.com/dhh"
+social_net.user_page(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
 ```
 
 If you pass a username, whild the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
@@ -124,26 +122,26 @@ Integral::SocialNet.select_options
 #  ]
 ```
 
-### Assumptions
+### Use with Rails
 
 This gem is Rails-agnostic, but you can use it in Rails like so:
 
 ```ruby
-model User
+model User < ApplicationRecord
   has_many :social_net_accounts
 end
 ```
 
 ```ruby
-model SocialNetAccount
+model SocialNetAccount < ApplicationRecord
   belongs_to :user
 
   def social_net
     @social_net ||= Integral::SocialNet.new(self.social_net_uid)
   end
 
-  def page_url
-    social_net.page_url(username: self.username, account_id: self.account_number)
+  def user_page
+    social_net.user_page(username: self.username, account_id: self.account_number)
   end
 
   #  id                                            :bigint           not null, primary key
@@ -154,6 +152,18 @@ model SocialNetAccount
   #  username(for example, `tenderlove`)           :string
   #  userpic_url                                   :string
 end
+```
+
+It's probably better to move those 2 methods into a decorator — here they are in the model just for brevity.
+
+```ruby
+@user = User.first
+social_net_account = SocialNetAccount.create(user_id: @user.id, social_net_uid: "facebook", username: "tenderlobe")
+@user.social_net_accounts << social_net_account
+```
+
+```ruby
+@user.social_net_accounts.first.user_page  #=> "https://facebook.com/tenderlove"
 ```
 
 ## Contributing
