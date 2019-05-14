@@ -37,7 +37,11 @@ module Integral
     end
 
     def user_page_methods
-      record[:user_page][:methods]
+      user_page = record[:user_page]
+      result = []
+      result << :by_account_id if present_str? user_page[:by_account_id]
+      result << :by_username   if present_str? user_page[:by_username]
+      result
     end
 
     def record

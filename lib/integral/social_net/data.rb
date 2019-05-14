@@ -11,8 +11,7 @@ module Integral
         url:   "https://behance.com",
         user_page: {
           by_username:   "https://behance.com/${username}",
-          by_account_id: "https://behance.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://behance.com/${account_id}"
         }
       }, {
         name:  "Dribble",
@@ -22,8 +21,7 @@ module Integral
         url:   "https://dribble.com",
         user_page: {
           by_username:   "https://dribble.com/${username}",
-          by_account_id: "https://dribble.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://dribble.com/${account_id}"
         }
       }, {
         name:  "Facebook",
@@ -33,8 +31,7 @@ module Integral
         url:   "https://facebook.com",
         user_page: {
           by_username:   "https://facebook.com/${username}",
-          by_account_id: "https://facebook.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://facebook.com/${account_id}"
         }
       }, {
         name:  "FL",
@@ -44,8 +41,7 @@ module Integral
         url:   "https://fl.ru",
         user_page: {
           by_username:   "https://www.fl.ru/users/${username}/",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Фрилансим",
@@ -55,8 +51,7 @@ module Integral
         url:   "https://freelansim.ru",
         user_page: {
           by_username:   "https://freelansim.ru/freelancers/${username}",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Habrahabr",
@@ -66,8 +61,7 @@ module Integral
         url:   "https://habr.com",
         user_page: {
           by_username:   "https://habr.com/ru/users/${username}/",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "GitHub",
@@ -77,8 +71,7 @@ module Integral
         url:   "https://github.com",
         user_page: {
           by_username:   "https://github.com/${username}",
-          by_account_id: "https://github.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://github.com/${account_id}"
         }
       }, {
         name:  "Instagram",
@@ -88,8 +81,7 @@ module Integral
         url:   "https://instagram.com",
         user_page: {
           by_username:   "https://www.instagram.com/${username}",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "LiveJournal",
@@ -99,8 +91,7 @@ module Integral
         url:   "https://livejournal.com",
         user_page: {
           by_username:   "https://${username}.livejournal.com",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "LinkedIn",
@@ -110,8 +101,7 @@ module Integral
         url:   "https://linkedin.com",
         user_page: {
           by_username:   "https://linkedin.com/in/${username}",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Medium",
@@ -121,8 +111,7 @@ module Integral
         url:   "https://medium.com",
         user_page: {
           by_username:   "https://${username}.medium.com",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Мой мир",
@@ -132,8 +121,7 @@ module Integral
         url:   "https://my.mail.ru",
         user_page: {
           by_username:   "https://my.mail.ru/mail/${username}/",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Одноклассники",
@@ -143,8 +131,7 @@ module Integral
         url:   "https://ok.ru",
         user_page: {
           by_username:   "https://ok.ru/${username}/",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "StackOverflow",
@@ -154,8 +141,7 @@ module Integral
         url:   "https://stackoverflow.com",
         user_page: {
           by_username:   nil,
-          by_account_id: "https://stackoverflow.com/users/${account_id}?tab=profile",
-          methods:       [:account_id]
+          by_account_id: "https://stackoverflow.com/users/${account_id}?tab=profile"
         }
       }, {
         name:  "Telegram",
@@ -165,8 +151,7 @@ module Integral
         url:   "https://telegram.com",
         user_page: {
           by_username:   "https://t.me/${username}",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "Twitter",
@@ -176,8 +161,7 @@ module Integral
         url:   "https://twitter.com",
         user_page: {
           by_username:   "https://twitter.com/${username}",
-          by_account_id: nil,
-          methods:       [:username]
+          by_account_id: nil
         }
       }, {
         name:  "UpWork",
@@ -187,8 +171,7 @@ module Integral
         url:   "https://upwork.com",
         user_page: {
           by_username:   nil,
-          by_account_id: "https://www.upwork.com/freelancers/~${account_id}",
-          methods:       [:account_id]
+          by_account_id: "https://www.upwork.com/freelancers/~${account_id}"
         }
       }, {
         name:  "Вконтакте",
@@ -198,8 +181,7 @@ module Integral
         url:   "https://vkontakte.com",
         user_page: {
           by_username:   "https://vkontakte.com/${username}",
-          by_account_id: "https://vkontakte.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://vkontakte.com/${account_id}"
         }
       }, {
         name:  "YouTube",
@@ -209,8 +191,7 @@ module Integral
         url:   "https://youtube.com",
         user_page: {
           by_username:   "https://youtube.com/${username}",
-          by_account_id: "https://youtube.com/${account_id}",
-          methods:       [:account_id, :username]
+          by_account_id: "https://youtube.com/${account_id}"
         }
       }
     ].freeze
