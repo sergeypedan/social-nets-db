@@ -1,0 +1,76 @@
+# This is the default configuration used to check the rubocop source code.
+# DisplayCopNames: true
+
+AllCops:
+  TargetRubyVersion: 2.6.2
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
+Layout/Tab:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - "**/*.gemspec"
+    - "spec/**/*"
+
+Metrics/LineLength:
+  Max: 200
+  IgnoredPatterns: ['\A#']
+
+Metrics/ParameterLists:
+  Max: 3
+
+Naming/UncommunicativeMethodParamName:
+  AllowedNames:
+    - "id"
+    - "io"
+    - "to"
+
+Style/SignalException:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/TernaryParentheses:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%w": "[]"
+    "%W": "[]"
+    "%i": "[]"
+    "%I": "[]"
+    "%r": "()"
