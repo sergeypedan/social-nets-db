@@ -31,6 +31,10 @@ module Integral
       return record[:user_page][:by_account_id].sub "${account_id}", account_id  if account_id && present_str?(record[:user_page][:by_account_id])
     end
 
+    def user_page_methods
+      record[:user_page][:methods]
+    end
+
     def record
       fail StandardError, "@uid is nil" if @uid.nil?
       self.class.find_by(uid: @uid)
