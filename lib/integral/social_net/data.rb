@@ -150,8 +150,8 @@ module Integral
         color: "#0088cc",
         url:  "https://telegram.com",
         user_page: {
-          by_username:   "https://telegram.com/${username}",
-          by_account_id: "https://telegram.com/${account_id}"
+          by_username:   "https://t.me/${username}",
+          by_account_id: nil
         }
       }, {
         name:  "Twitter",
