@@ -1,5 +1,7 @@
 # Integral::SocialNet
 
+[![Build Status](https://travis-ci.org/sergeypedan/integral-social-nets.svg?branch=master)](https://travis-ci.org/sergeypedan/integral-yandex-money-notification_validator)
+
 ## Installation
 
 ```ruby
