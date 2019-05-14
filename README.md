@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.org/sergeypedan/integral-social-nets.svg?branch=master)](https://travis-ci.org/sergeypedan/integral-yandex-money-notification_validator)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a102170f593b7efdecd0/maintainability)](https://codeclimate.com/github/sergeypedan/integral-social-nets/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a102170f593b7efdecd0/test_coverage)](https://codeclimate.com/github/sergeypedan/integral-social-nets/test_coverage)
+
+
 ## Installation
 
 ```ruby
