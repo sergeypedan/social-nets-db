@@ -27,8 +27,13 @@ module Integral
 
     def user_page(username: nil, account_id: nil)
       fail ArgumentError, "Either a username or an account id must be provided" if !present_str?(username) && !present_str?(account_id)
-      return record[:user_page][:by_username  ].sub "${username}",   username    if username   && present_str?(record[:user_page][:by_username])
-      return record[:user_page][:by_account_id].sub "${account_id}", account_id  if account_id && present_str?(record[:user_page][:by_account_id])
+      page = record[:user_page]
+
+      username_template = page[:by_username]
+      return username_template.sub "${username}", username if username && present_str?(username_template)
+
+      account_id_template = page[:by_account_id]
+      return account_id_template.sub "${account_id}", account_id  if account_id && present_str?(account_id_template)
     end
 
     def user_page_methods
@@ -36,7 +41,7 @@ module Integral
     end
 
     def record
-      fail StandardError, "@uid is nil" if @uid.nil?
+      fail StandardError, "@uid is nil" unless @uid
       self.class.find_by(uid: @uid)
     end
 
@@ -54,8 +59,8 @@ module Integral
       end
 
       def find_by(name: nil, uid: nil)
-        return DB.select { |record| record[:uid]  == uid  }.first if present_str?(uid)
-        return DB.select { |record| record[:name] == name }.first if present_str?(name)
+        return find_by_uid(uid)   if present_str?(uid)
+        return find_by_name(name) if present_str?(name)
         fail ArgumentError, "`name:` or `uid:` must be provided. You are passing name: #{name.inspect}, uid: #{uid.inspect}"
       end
 
@@ -65,6 +70,14 @@ module Integral
 
       def uids
         DB.map { |record| record[:uid] }
+      end
+
+      private def find_by_name(name)
+        DB.select { |record| record[:name] == name }.first
+      end
+
+      private def find_by_uid(uid)
+        DB.select { |record| record[:uid] == uid }.first
       end
 
     end

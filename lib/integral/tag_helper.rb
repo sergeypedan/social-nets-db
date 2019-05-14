@@ -1,7 +1,11 @@
 # frozen_string_literal: false
 
+require_relative "support"
+
 module Integral
   module TagHelper
+
+    include Support
 
     def tag_attributes_to_s(options)
       fail ArgumentError, "A Hash must be passed, you pass #{options.class}: #{options.inspect}" unless options.is_a? Hash
@@ -18,6 +22,16 @@ module Integral
 
     private def stringify_value(value)
       value.is_a?(Array) ? value.join(" ") : value.to_s
+    end
+
+    def merge_style_values(existing:, incoming:)
+      return existing unless present_str? incoming
+      [existing, "#{incoming};"].join("; ").gsub(";;", ";")
+    end
+
+    def merge_class_values(existing:, incoming:)
+      return existing unless present_str? incoming
+      [existing, incoming]
     end
 
   end
