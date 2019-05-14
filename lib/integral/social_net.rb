@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
+require_relative "support"
 require_relative "social_net/version"
 require_relative "social_net/data"
-require_relative "social_net/support"
 require_relative "social_net/font_awesome"
 
 module Integral
