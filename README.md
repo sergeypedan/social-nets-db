@@ -51,7 +51,34 @@ social_net = Integral::SocialNet.new("facebook")
 # => #<Integral::SocialNet:0x00007fddc0041b40 @uid="facebook">
 ```
 
-Which are supported UIDs? Try an unsupported UID, and you will get the list:
+Which are supported UIDs?
+
+```ruby
+Integral::SocialNet.uids
+#=> [
+#    "behance",
+#    "dribble",
+#    "facebook",
+#    "fl.ru",
+#    "freelansim",
+#    "habr",
+#    "github",
+#    "instagram",
+#    "livejournal",
+#    "linkedin",
+#    "medium",
+#    "my.mail.ru",
+#    "odnoklassniki",
+#    "stackoverflow",
+#    "telegram",
+#    "twitter",
+#    "upwork",
+#    "vkontakte",
+#    "youtube"
+#  ]
+```
+
+If you try to initialize with an unsupported UID, and you will also get the list along with an Exception:
 
 ```ruby
 Integral::SocialNet.new("diaspora")
