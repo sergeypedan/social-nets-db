@@ -25,7 +25,8 @@ DB = [
     url:  "https://behance.com",
     user_page: {
       by_username:   "https://behance.com/${username}",
-      by_account_id: "https://behance.com/${account_id}"
+      by_account_id: "https://behance.com/${account_id}",
+      methods:       [:account_id, :username]
     }
   },
   # ...
@@ -69,7 +70,8 @@ social_net.record
 #      url:  "https://facebook.com",
 #      user_page: {
 #        by_username:   "https://facebook.com/${username}",
-#        by_account_id: "https://facebook.com/${account_id}"
+#        by_account_id: "https://facebook.com/${account_id}",
+#        methods:       [:account_id, :username]
 #      }
 #    }
 ```
@@ -115,6 +117,12 @@ social_net.user_page(account_id: "id1234566789")   #=> "https://facebook.com/acc
 ```
 
 If you pass a username, whild the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
+
+You can check which is supported
+
+```ruby
+social_net.user_page_methods  #=> [:account_id, :username]
+```
 
 
 ## Use with Rails
