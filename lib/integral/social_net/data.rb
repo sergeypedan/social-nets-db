@@ -140,8 +140,8 @@ module Integral
         color: "#F48024",
         url:  "https://stackoverflow.com",
         user_page: {
-          by_username:   "https://stackoverflow.com/${username}",
-          by_account_id: "https://stackoverflow.com/${account_id}"
+          by_username:   nil,
+          by_account_id: "https://stackoverflow.com/users/${account_id}?tab=profile"
         }
       }, {
         name:  "Telegram",
