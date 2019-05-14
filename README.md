@@ -52,9 +52,9 @@ Like in the footer of a website:
 ruby:
   accounts = [
     { net_uid: "instagram", username: "dhh" },
-    { net_uid: "facebook",  username: "dhh" },
-    { net_uid: "twitter",   username: "dhh" },
-    { net_uid: "telegram",  username: "dhh" }
+    { net_uid: "facebook",  username: "d-h-h" },
+    { net_uid: "twitter",   username: "d_h_h" },
+    { net_uid: "upwork",    account_id: "401298374012374" }
   ]
 
 - accounts.each do |account|
@@ -83,13 +83,24 @@ Here the gem:
 - builds the FontAwesome HTML tag with the right icon (if FA has it)
 
 	```ruby
-	# <span class="fa fa-facebook"></span>
+	net.fa_icon(class: "fa-fw")
+	# <span class="fa fa-facebook fa-fw"></span>
 	```
 
-- paints the icon in the brand color (can be turned off)
+	that has the same API as original `fa_icon` from FontAwesome gem
+
+- paints the icon in the brand color
 
 	```ruby
+	net.fa_icon
 	# <span class="fa fa-facebook" style="color: #3C5A99"></span>
+	```
+	
+	which can be turned off:
+
+	```ruby
+	net.fa_icon(color: false)
+	# <span class="fa fa-facebook"></span>
 	```
 
 
