@@ -42,6 +42,50 @@ Everything else is just helpers around this simple DB: finders, accessors & view
 
 ## Usage
 
+There are 2 primary use cases for this gem:
+
+### 1. To help create lists of link to social net accounts
+
+Like in the footer of a website:
+
+```ruby
+ruby:
+  accounts = [
+    { net_uid: "instagram", username: "dhh" },
+    { net_uid: "facebook",  username: "dhh" },
+    { net_uid: "twitter",   username: "dhh" },
+    { net_uid: "telegram",  username: "dhh" }
+  ]
+
+- accounts.each do |account|
+  - net = Integral::SocialNet.new account[:net_uid]
+  li
+    = net.fa_icon(class: "fa-fw").html_safe
+    =< link_to net.name, net.user_page(username: account[:username]), target: "_blank", rel: "noopener noreferrer me"
+```
+
+Here the gem helps to:
+
+- builds the URL to user page
+- builds the FontAwesome HTML tag with the right icon (if FA has it)
+- paints the icon in the brand color (can be turned off)
+
+
+### 2. To help building a `<select>` with social nets when storing user's account link
+
+```ruby
+= form_for @user do |f|
+  = f.fields_for :social_net_accounts do |sna|
+    .form-group
+      = sna.label  :social_net_uid, class: "control-label"
+      = sna.select :social_net_uid, Integral::SocialNet.select_options, {}, class: "form-control"
+```
+
+See section “[Using with Rails](#use-with-rails)” below for more details.
+
+
+## API
+
 ### Instance of `Integral::SocialNet` class
 
 Initialize an instance with social net UID.
