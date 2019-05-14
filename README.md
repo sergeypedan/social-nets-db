@@ -44,7 +44,7 @@ Everything else is just helpers around this simple DB: finders, accessors & view
 
 There are 2 primary use cases for this gem:
 
-### 1. To help create lists of link to social net accounts
+### 1. To help create lists of links to social net accounts
 
 Like in the footer of a website:
 
@@ -64,11 +64,33 @@ ruby:
     =< link_to net.name, net.user_page(username: account[:username]), target: "_blank", rel: "noopener noreferrer me"
 ```
 
-Here the gem helps to:
+Here the gem:
 
 - builds the URL to user page
+
+	```ruby
+	net.user_page(username: account[:username])
+	# "https://facebook.com/dhh"
+	```
+
+- gives you the correct name of the social net
+
+	```ruby
+	net.name
+	# "Facebook"
+	```
+
 - builds the FontAwesome HTML tag with the right icon (if FA has it)
+
+	```ruby
+	# <span class="fa fa-facebook"></span>
+	```
+
 - paints the icon in the brand color (can be turned off)
+
+	```ruby
+	# <span class="fa fa-facebook" style="color: #3C5A99"></span>
+	```
 
 
 ### 2. To help building a `<select>` with social nets when storing user's account link
