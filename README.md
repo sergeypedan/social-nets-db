@@ -57,11 +57,15 @@ ruby:
     { net_uid: "upwork",    account_id: "401298374012374" }
   ]
 
-- accounts.each do |account|
-  - net = Integral::SocialNet.new account[:net_uid]
-  li
-    = net.fa_icon(class: "fa-fw").html_safe
-    =< link_to net.name, net.user_page(username: account[:username]), target: "_blank", rel: "noopener noreferrer me"
+ul
+  - accounts.each do |account|
+    - net = Integral::SocialNet.new account[:net_uid]
+    li
+      = net.fa_icon(class: "fa-fw").html_safe
+      =< link_to net.name, \
+                 net.user_page(username: account[:username], account_id: account[:account_id]), \
+                 target: "_blank", \
+                 rel: "noopener noreferrer"
 ```
 
 Here the gem:
