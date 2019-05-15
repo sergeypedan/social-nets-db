@@ -14,10 +14,10 @@ RSpec.describe Integral::SocialNet, "#fa_icon" do
     end
   end
 
-  context "when fa_id is missing in the DB" do
+  context "when `fa_id` is missing in the DB" do
     let(:social_net_uid) { "freelansim" }
-    it "returns nil" do
-      expect(subject.fa_icon).to be_nil
+    it "uses `link` font icon ID" do
+      expect(subject.fa_icon).to eq "<span class=\"fa fa-link\" style=\"color: #4abfb4\"></span>"
     end
   end
 

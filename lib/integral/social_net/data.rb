@@ -166,7 +166,7 @@ module Integral
       }, {
         name:  "UpWork",
         uid:   "upwork",
-        fa_id: "upwork",
+        fa_id: nil,
         color: "#37A000",
         url:   "https://upwork.com",
         user_page: {
