@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-RSpec.describe Integral::SocialNet, ".initialize" do
+RSpec.describe Integral::SocialNet, ".new" do
 
   context "with valid uid" do
     it do
