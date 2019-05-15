@@ -16,19 +16,19 @@ module Integral
     def initialize(uid)
       fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present_str?(uid)
       @uid = uid
-      fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless record
+      fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless self.class.uid_supported? @uid
     end
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
       define_method(method_symbol) do
-        self.record[method_symbol]
+        to_h[method_symbol]
       end
     end
 
 
     def user_page(username: nil, account_id: nil)
       fail ArgumentError, "Either a username or an account id must be provided" if !present_str?(username) && !present_str?(account_id)
-      page = record[:user_page]
+      page = to_h[:user_page]
 
       username_template = page[:by_username]
       return username_template.sub "${username}", username if username && present_str?(username_template)
@@ -39,12 +39,12 @@ module Integral
 
 
     def user_page_methods
-      [:account_id, :username].select { |key| present_str? record[:user_page]["by_#{key}".to_sym] }
+      [:account_id, :username].select { |key| present_str? to_h[:user_page]["by_#{key}".to_sym] }
     end
 
-    def record
+    def to_h
       fail StandardError, "@uid is nil" unless @uid
-      self.class.find_by(uid: @uid)
+      self.class.send :find_hash_by_uid, @uid
     end
 
 
@@ -75,11 +75,20 @@ module Integral
       end
 
       private def find_by_name(name)
-        DB.select { |record| record[:name] == name }.first
+        return unless record = DB.select { |record| record[:name] == name }.first
+        find_by_uid record[:uid]
       end
 
       private def find_by_uid(uid)
+        self.new(uid) rescue nil
+      end
+
+      private def find_hash_by_uid(uid)
         DB.select { |record| record[:uid] == uid }.first
+      end
+
+      def uid_supported?(uid)
+        uids.include? uid
       end
 
     end

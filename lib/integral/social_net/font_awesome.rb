@@ -16,7 +16,7 @@ require_relative "../tag_helper"
         color = options.has_key?(:color) ? !!options.delete(:color) : true
 
         defaults = {
-          style: ("color: #{record[:color]}" if color),
+          style: ("color: #{to_h[:color]}" if color),
           class: ["fa", "fa-#{fa_id}"]
         }
 

@@ -162,6 +162,13 @@ Integral::SocialNet.uids
 #  ]
 ```
 
+Another way to check if UID is supported is to call `uid_supported?`:
+
+```ruby
+Integral::SocialNet.uid_supported? "facebook"
+#=> true
+```
+
 If you try to initialize with an unsupported UID, and you will also get the list along with an Exception:
 
 ```ruby
@@ -171,10 +178,28 @@ Integral::SocialNet.new("diaspora")
 # Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
 ```
 
+### find_by
+
+If you don't want to rescue exceptions while initializing, you can use `find_by(uid:)` instead.
+
+It returns an instance:
+
+```ruby
+Integral::SocialNet.find_by(uid: "facebook")
+# => #<Integral::SocialNet:0x00007fddc0041b40 @uid="facebook">
+```
+
+or `nil`:
+
+```ruby
+Integral::SocialNet.find_by(uid: "blabla")
+# => nil
+```
+
 ### Data
 
 ```ruby
-social_net.record
+social_net.to_h
 # => {
 #      name:  "Facebook",
 #      uid:   "facebook",
