@@ -14,9 +14,10 @@ module Integral
     include FontAwesome
 
     def initialize(uid)
+      kl = self.class
       fail ArgumentError, "Social net UID must be provided (like \"facebook\"), you passed #{uid.inspect}" unless present_str?(uid)
       @uid = uid
-      fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{self.class.uids.join(", ")}") unless self.class.uid_supported? @uid
+      fail(ArgumentError, "Social net with UID #{uid} is not supported. Currently supported UIDs are: #{kl.uids.join(", ")}") unless kl.uid_supported? @uid
     end
 
     [:color, :fa_id, :name, :uid, :url].each do |method_symbol|
