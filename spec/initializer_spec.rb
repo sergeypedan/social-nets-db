@@ -8,6 +8,8 @@ RSpec.describe Integral::SocialNet, ".new" do
 
   context "with valid uid" do
     let(:social_net_uid) { "facebook" }
+    it { is_expected.to be_a Integral::SocialNet }
+    it "finds the correct social net" do expect(subject.name).to eq "Facebook" end
   end
 
   context "with unsupported uid" do
