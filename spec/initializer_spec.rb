@@ -7,9 +7,7 @@ RSpec.describe Integral::SocialNet, ".new" do
   subject { described_class.new(social_net_uid) }
 
   context "with valid uid" do
-    it do
-      expect(described_class.new("facebook")).to be_a Integral::SocialNet
-    end
+    let(:social_net_uid) { "facebook" }
   end
 
   context "with unsupported uid" do
@@ -19,15 +17,11 @@ RSpec.describe Integral::SocialNet, ".new" do
   end
 
   context "with empty uid" do
-    it do
-      expect { described_class.new("") }.to raise_exception ArgumentError
-    end
+    it do expect { described_class.new("") }.to raise_exception ArgumentError end
   end
 
   context "with no arguments" do
-    it do
-      expect { described_class.new }.to raise_exception ArgumentError
-    end
+    it do expect { described_class.new }.to raise_exception ArgumentError end
   end
 
 end
