@@ -121,6 +121,23 @@ Here the gem:
       = sna.select :social_net_uid, Integral::SocialNet.select_options, {}, class: "form-control"
 ```
 
+which produces
+
+```html
+<form action="/users" method="POST">
+  <div class="form-group">
+    <label for="user_social_net_accounts_attributes_123_social_net_uid">Social net UID</label>
+    <select required="required" class="form-control" name="user[social_net_accounts_attributes][123][social_net_uid]">
+      <option value="">Choose a social net: </option>
+      <option value="behance">Behance</option>
+      <option value="dribble">Dribble</option>
+      <option value="facebook">Facebook</option>
+      <!-- ... -->
+    </select>
+  </div>
+</form>
+```
+
 See section “[Using with Rails](#use-with-rails)” below for more details.
 
 
