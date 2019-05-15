@@ -3,8 +3,13 @@
 module Integral
   module Support
 
-    def present_str?(string)
-      string && string != "" && string.is_a?(String)
+    # Direct analogue of Rails' `String#present?`
+    #
+    # @return [Boolean] is the passed argument is a non-empty String
+    # @param arg [Any] the thing to check
+    #
+    def present_str?(arg)
+      arg.is_a?(String) && arg != ""
     end
 
   end
