@@ -4,6 +4,8 @@ require "spec_helper"
 
 RSpec.describe Integral::SocialNet, ".new" do
 
+  subject { described_class.new(social_net_uid) }
+
   context "with valid uid" do
     it do
       expect(described_class.new("facebook")).to be_a Integral::SocialNet
