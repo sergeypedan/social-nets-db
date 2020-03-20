@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["lib/**/*"]
   spec.extra_rdoc_files = Dir["README*", "LICENSE*"]
 
-  spec.add_development_dependency "bundler", "~> 2.0"
+  spec.add_development_dependency "bundler", ">= 2.0"
   spec.add_development_dependency "bundler-audit"
   spec.add_development_dependency "gemsmith"
   spec.add_development_dependency "git-cop"
