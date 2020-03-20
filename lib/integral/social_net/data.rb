@@ -74,6 +74,16 @@ module Integral
           by_account_id: "https://github.com/${account_id}"
         }
       }, {
+        name:  "GitLab",
+        uid:   "gitlab",
+        fa_id: "gitlab",
+        color: "#fa7035",
+        url:   "https://gitlab.com",
+        user_page: {
+          by_username:   "https://gitlab.com/${username}",
+          by_account_id: nil
+        }
+      }, {
         name:  "Instagram",
         uid:   "instagram",
         fa_id: "instagram",
