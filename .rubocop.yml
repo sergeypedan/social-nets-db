@@ -16,7 +16,7 @@ AllCops:
     - 'db/**/*'
     - 'node_modules/**/*'
 
-Layout/AlignHash:
+Layout/HashAlignment:
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
 
@@ -35,7 +35,7 @@ Layout/IndentationWidth:
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: space
 
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: false
 
 Metrics/BlockLength:
@@ -52,7 +52,7 @@ Metrics/LineLength:
 Metrics/ParameterLists:
   Max: 3
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   AllowedNames:
     - "id"
     - "io"
