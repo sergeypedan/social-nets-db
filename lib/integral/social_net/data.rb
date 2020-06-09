@@ -190,8 +190,8 @@ module Integral
         color: "#45668e",
         url:   "https://vkontakte.com",
         user_page: {
-          by_username:   "https://vkontakte.com/${username}",
-          by_account_id: "https://vkontakte.com/${account_id}"
+          by_username:   "https://vk.com/${username}",
+          by_account_id: "https://vk.com/id${account_id}"
         }
       }, {
         name:  "YouTube",
