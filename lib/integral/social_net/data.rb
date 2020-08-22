@@ -94,16 +94,6 @@ module Integral
           by_account_id: nil
         }
       }, {
-        name:  "LiveJournal",
-        uid:   "livejournal",
-        fa_id: "livejournal",
-        color: "#00A3D9",
-        url:   "https://livejournal.com",
-        user_page: {
-          by_username:   "https://${username}.livejournal.com",
-          by_account_id: nil
-        }
-      }, {
         name:  "LinkedIn",
         uid:   "linkedin",
         fa_id: "linkedin",
@@ -111,6 +101,16 @@ module Integral
         url:   "https://linkedin.com",
         user_page: {
           by_username:   "https://linkedin.com/in/${username}",
+          by_account_id: nil
+        }
+      }, {
+        name:  "LiveJournal",
+        uid:   "livejournal",
+        fa_id: "livejournal",
+        color: "#00A3D9",
+        url:   "https://livejournal.com",
+        user_page: {
+          by_username:   "https://${username}.livejournal.com",
           by_account_id: nil
         }
       }, {
@@ -141,6 +141,16 @@ module Integral
         url:   "https://ok.ru",
         user_page: {
           by_username:   "https://ok.ru/${username}/",
+          by_account_id: nil
+        }
+      }, {
+        name:  "RemoteOK",
+        uid:   "remoteok",
+        fa_id: nil,
+        color: "#ff4742",
+        url:   "https://remoteok.io",
+        user_page: {
+          by_username:   "https://remoteok.io/@${username}",
           by_account_id: nil
         }
       }, {
