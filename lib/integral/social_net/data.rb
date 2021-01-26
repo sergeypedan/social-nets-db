@@ -14,6 +14,16 @@ module Integral
           by_account_id: "https://behance.com/${account_id}"
         }
       }, {
+        name:  "Bitchute",
+        uid:   "bitchute",
+        fa_id:  nil,
+        color: "#ef4137",
+        url:   "https://bitchute.com",
+        user_page: {
+          by_username:   "https://bitchute.com/profile/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Dribble",
         uid:   "dribble",
         fa_id: "dribble",
@@ -36,32 +46,42 @@ module Integral
       }, {
         name:  "FL",
         uid:   "fl.ru",
-        fa_id: nil,
+        fa_id:  nil,
         color: "#4ea828",
         url:   "https://fl.ru",
         user_page: {
           by_username:   "https://www.fl.ru/users/${username}/",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "Фрилансим",
         uid:   "freelansim",
-        fa_id: nil,
+        fa_id:  nil,
         color: "#4abfb4",
         url:   "https://freelansim.ru",
         user_page: {
           by_username:   "https://freelansim.ru/freelancers/${username}",
-          by_account_id: nil
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Gab",
+        uid:   "gab",
+        fa_id:  nil,
+        color: "#21cf7a",
+        url:   "https://gab.com",
+        user_page: {
+          by_username:   "https://gab.com/${username}",
+          by_account_id:  nil
         }
       }, {
         name:  "Habrahabr",
         uid:   "habr",
-        fa_id: nil,
+        fa_id:  nil,
         color: "#65a3be",
         url:   "https://habr.com",
         user_page: {
           by_username:   "https://habr.com/ru/users/${username}/",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "GitHub",
@@ -81,7 +101,7 @@ module Integral
         url:   "https://gitlab.com",
         user_page: {
           by_username:   "https://gitlab.com/${username}",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "Instagram",
@@ -91,7 +111,17 @@ module Integral
         url:   "https://instagram.com",
         user_page: {
           by_username:   "https://www.instagram.com/${username}",
-          by_account_id: nil
+          by_account_id:  nil
+        }
+      }, {
+        name:  "LBRY",
+        uid:   "lbry",
+        fa_id:  nil,
+        color: "#38d9a9",
+        url:   "https://lbry.tv/@RedPillPhilosophy",
+        user_page: {
+          by_username:   "https://lbry.tv/@${username}",
+          by_account_id:  nil
         }
       }, {
         name:  "LinkedIn",
@@ -101,7 +131,7 @@ module Integral
         url:   "https://linkedin.com",
         user_page: {
           by_username:   "https://linkedin.com/in/${username}",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "LiveJournal",
@@ -111,7 +141,7 @@ module Integral
         url:   "https://livejournal.com",
         user_page: {
           by_username:   "https://${username}.livejournal.com",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "Medium",
@@ -121,17 +151,27 @@ module Integral
         url:   "https://medium.com",
         user_page: {
           by_username:   "https://${username}.medium.com",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "Мой мир",
         uid:   "my.mail.ru",
-        fa_id: "",
+        fa_id:  nil,
         color: "#005FF9",
         url:   "https://my.mail.ru",
         user_page: {
           by_username:   "https://my.mail.ru/mail/${username}/",
-          by_account_id: nil
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Odysee",
+        uid:   "odysee",
+        fa_id:  nil,
+        color: "#000000",
+        url:   "https://odysee.com",
+        user_page: {
+          by_username:   "https://odysee.com/@${username}/",
+          by_account_id:  nil
         }
       }, {
         name:  "Одноклассники",
@@ -141,17 +181,17 @@ module Integral
         url:   "https://ok.ru",
         user_page: {
           by_username:   "https://ok.ru/${username}/",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "RemoteOK",
         uid:   "remoteok",
-        fa_id: nil,
+        fa_id:  nil,
         color: "#ff4742",
         url:   "https://remoteok.io",
         user_page: {
           by_username:   "https://remoteok.io/@${username}",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "StackOverflow",
@@ -171,7 +211,17 @@ module Integral
         url:   "https://telegram.com",
         user_page: {
           by_username:   "https://t.me/${username}",
-          by_account_id: nil
+          by_account_id:  nil
+        }
+      }, {
+        name:  "TikTok",
+        uid:   "tiktok",
+        fa_id:  nil,
+        color: "#fe2c55",
+        url:   "https://tiktok.com",
+        user_page: {
+          by_username:   "https://tiktok.com/@${username}",
+          by_account_id:  nil
         }
       }, {
         name:  "Twitter",
@@ -181,12 +231,12 @@ module Integral
         url:   "https://twitter.com",
         user_page: {
           by_username:   "https://twitter.com/${username}",
-          by_account_id: nil
+          by_account_id:  nil
         }
       }, {
         name:  "UpWork",
         uid:   "upwork",
-        fa_id: nil,
+        fa_id:  nil,
         color: "#37A000",
         url:   "https://upwork.com",
         user_page: {
