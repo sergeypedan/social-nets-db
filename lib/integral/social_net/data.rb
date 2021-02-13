@@ -24,6 +24,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Discord",
+        uid:   "discord",
+        fa_id:  nil,
+        color: "#7289da",
+        url:   "https://discord.com",
+        user_page: {
+          by_username:    nil,
+          by_account_id: "https://discord.gg/${account_id}"
+        }
+      }, {
         name:  "Dribble",
         uid:   "dribble",
         fa_id: "dribble",
@@ -184,6 +194,26 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "PayPal",
+        uid:   "paypal",
+        fa_id: "paypal",
+        color: "#0070ba",
+        url:   "https://paypal.com",
+        user_page: {
+          by_username:   "https://paypal.me/${username}",
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Patreon",
+        uid:   "patreon",
+        fa_id:  nil,
+        color: "#ff424d",
+        url:   "https://patreon.com",
+        user_page: {
+          by_username:   "https://patreon.com/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "RemoteOK",
         uid:   "remoteok",
         fa_id:  nil,
@@ -202,6 +232,16 @@ module Integral
         user_page: {
           by_username:   nil,
           by_account_id: "https://stackoverflow.com/users/${account_id}?tab=profile"
+        }
+      }, {
+        name:  "SubscribeStar",
+        uid:   "subscribestar",
+        fa_id:  nil,
+        color: "#ff4081",
+        url:   "https://subscribestar.com",
+        user_page: {
+          by_username:   nil,
+          by_account_id: "https://subscribestar.com/${username}"
         }
       }, {
         name:  "Telegram",
