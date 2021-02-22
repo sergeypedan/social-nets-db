@@ -240,8 +240,18 @@ module Integral
         color: "#ff4081",
         url:   "https://subscribestar.com",
         user_page: {
-          by_username:   nil,
-          by_account_id: "https://subscribestar.com/${username}"
+          by_username:   "https://subscribestar.com/${username}",
+          by_account_id: nil
+        }
+      }, {
+        name:  "SubStack",
+        uid:   "substack",
+        fa_id:  nil,
+        color: "#ff4081",
+        url:   "https://substack.com",
+        user_page: {
+          by_username:   "https://${username}.substack.com",
+          by_account_id: nil
         }
       }, {
         name:  "Telegram",
