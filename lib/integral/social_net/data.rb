@@ -24,6 +24,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Bitclout",
+        uid:   "bitclout",
+        fa_id:  nil,
+        color: "#ef4137",
+        url:   "https://bitclout.com",
+        user_page: {
+          by_username:   "https://bitclout.com/u/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Discord",
         uid:   "discord",
         fa_id:  nil,
