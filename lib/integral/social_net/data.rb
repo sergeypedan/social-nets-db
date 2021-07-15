@@ -94,6 +94,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Gettr",
+        uid:   "gettr",
+        fa_id:  nil,
+        color: "#ff0013",
+        url:   "https://gettr.com",
+        user_page: {
+          by_username:   "https://gettr.com/user/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Habrahabr",
         uid:   "habr",
         fa_id:  nil,
