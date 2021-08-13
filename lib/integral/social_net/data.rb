@@ -34,6 +34,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Blogger",
+        uid:   "blogger",
+        fa_id: "link",
+        color: "#ff8000",
+        url:   "https://blogger.com",
+        user_page: {
+          by_username:   "https://${username}.blogspot.com",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Discord",
         uid:   "discord",
         fa_id:  nil,
@@ -174,6 +184,26 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Locals",
+        uid:   "locals",
+        fa_id:  nil,
+        color: "#e73348",
+        url:   "https://locals.com",
+        user_page: {
+          by_username:   "https://${username}.locals.com",
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Manosphere",
+        uid:   "manosphere",
+        fa_id:  nil,
+        color: "#d84c47",
+        url:   "https://manosphere.tv",
+        user_page: {
+          by_username:   "https://manosphere.tv/@${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Medium",
         uid:   "medium",
         fa_id: "medium",
@@ -241,6 +271,16 @@ module Integral
         url:   "https://remoteok.io",
         user_page: {
           by_username:   "https://remoteok.io/@${username}",
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Rumble",
+        uid:   "rumble",
+        fa_id: "play-circle",
+        color: "#74a441",
+        url:   "https://rumble.com",
+        user_page: {
+          by_username:   "https://rumble.com/c/${username}",
           by_account_id:  nil
         }
       }, {
@@ -332,6 +372,16 @@ module Integral
         user_page: {
           by_username:   "https://youtube.com/${username}",
           by_account_id: "https://youtube.com/${account_id}"
+        }
+      }, {
+        name:  "Web site",
+        uid:   "website",
+        fa_id: "link",
+        color: "#ff0000",
+        url:    nil,
+        user_page: {
+          by_username:   "${username}",
+          by_account_id:  nil
         }
       }
     ].freeze
