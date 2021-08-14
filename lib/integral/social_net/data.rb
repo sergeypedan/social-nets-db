@@ -370,8 +370,8 @@ module Integral
         color: "#ff0000",
         url:   "https://youtube.com",
         user_page: {
-          by_username:   "https://youtube.com/${username}",
-          by_account_id: "https://youtube.com/${account_id}"
+          by_username:   "https://youtube.com/c/${username}",
+          by_account_id: "https://youtube.com/channel/${account_id}"
         }
       }, {
         name:  "Web site",
