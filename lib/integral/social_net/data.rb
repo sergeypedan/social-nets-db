@@ -80,7 +80,17 @@ module Integral
         color: "#4ea828",
         url:   "https://fl.ru",
         user_page: {
-          by_username:   "https://www.fl.ru/users/${username}/",
+          by_username:   "https://fl.ru/users/${username}/",
+          by_account_id:  nil
+        }
+      }, {
+        name:  "Flote",
+        uid:   "flote",
+        fa_id:  nil,
+        color: "#01f",
+        url:   "https://flote.app",
+        user_page: {
+          by_username:   "https://flote.app/user/${username}/",
           by_account_id:  nil
         }
       }, {
@@ -150,7 +160,7 @@ module Integral
         color: "#e1306c",
         url:   "https://instagram.com",
         user_page: {
-          by_username:   "https://www.instagram.com/${username}",
+          by_username:   "https://instagram.com/${username}",
           by_account_id:  nil
         }
       }, {
@@ -351,7 +361,7 @@ module Integral
         url:   "https://upwork.com",
         user_page: {
           by_username:   nil,
-          by_account_id: "https://www.upwork.com/freelancers/~${account_id}"
+          by_account_id: "https://upwork.com/freelancers/~${account_id}"
         }
       }, {
         name:  "Вконтакте",
