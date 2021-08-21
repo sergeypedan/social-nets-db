@@ -234,6 +234,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Minds",
+        uid:   "minds",
+        fa_id:  nil,
+        color: "#ffdd63",
+        url:   "https://minds.com",
+        user_page: {
+          by_username:   "https://minds.com/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Мой мир",
         uid:   "my.mail.ru",
         fa_id:  nil,
