@@ -70,7 +70,7 @@ module Integral
         color: "#ea4c89",
         url:   "https://gmail.com",
         user_page: {
-          by_username:    username,
+          by_username:   "${username}",
           by_account_id:  nil
         }
       }, {
