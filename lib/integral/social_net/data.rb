@@ -64,6 +64,16 @@ module Integral
           by_account_id: "https://dribble.com/${account_id}"
         }
       }, {
+        name:  "E-mail",
+        uid:   "email",
+        fa_id: "at",
+        color: "#ea4c89",
+        url:   "https://gmail.com",
+        user_page: {
+          by_username:    username,
+          by_account_id:  nil
+        }
+      }, {
         name:  "Ethereum namespace",
         uid:   "ens",
         fa_id:  nil,
