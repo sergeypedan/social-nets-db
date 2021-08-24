@@ -154,6 +154,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Хабр Карьера",
+        uid:   "habr-career",
+        fa_id:  nil,
+        color: "#64c178",
+        url:   "https://career.habr.com",
+        user_page: {
+          by_username:   "https://career.habr.com/${username}/",
+          by_account_id:  nil
+        }
+      }, {
         name:  "GitHub",
         uid:   "github",
         fa_id: "github",
