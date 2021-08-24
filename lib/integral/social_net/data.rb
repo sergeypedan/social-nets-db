@@ -164,6 +164,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "HeadHunter",
+        uid:   "hh",
+        fa_id:  nil,
+        color: "#D6001C",
+        url:   "https://hh.ru",
+        user_page: {
+          by_username:    nil,
+          by_account_id: "https://hh.ru/resume/${account_id}"
+        }
+      }, {
         name:  "GitHub",
         uid:   "github",
         fa_id: "github",
