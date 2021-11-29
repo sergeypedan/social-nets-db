@@ -334,6 +334,16 @@ module Integral
           by_account_id:  nil
         }
       }, {
+        name:  "Rokfin",
+        uid:   "rokfin",
+        fa_id:  nil,
+        color: "#08AD9F",
+        url:   "https://rokfin.com",
+        user_page: {
+          by_username:   "https://rokfin.com/${username}",
+          by_account_id:  nil
+        }
+      }, {
         name:  "Rumble",
         uid:   "rumble",
         fa_id: "play-circle",
