@@ -29,8 +29,6 @@ behance:
     by_account_id: "https://${domain}/${uid}"
 ```
 
-[Peek into the source](https://github.com/sergeypedan/social-nets-db/blob/master/lib/social_net_db/db.yml).
-
 Everything else is just helpers around this simple DB: finders, accessors & view helpers.
 
 
