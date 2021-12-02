@@ -139,19 +139,18 @@ SocialNetsDB.uids
 ### Data
 
 ```ruby
-social_net.to_h
-# => {
-#      name:  "Facebook",
-#      uid:   "facebook",
-#      fa_id: "facebook",
-#      color: "crimson",
-#      url:  "https://facebook.com",
-#      user_page: {
-#        by_username:   "https://facebook.com/${username}",
-#        by_account_id: "https://facebook.com/${account_id}",
-#        methods:       [:account_id, :username]
-#      }
-#    }
+social_net.to_h #=>
+# {
+#   "name" => "Facebook",
+#   "icons" => { "font_awesome_4" => "facebook" },
+#   "color" => "#3C5A99",
+#   "domain" => "facebook.com",
+#   "tags" => ["social net"],
+#   "profile_url" => {
+#     "by_username" => "https://${domain}/${uid}",
+#     "by_account_id" => "https://${domain}/${uid}"
+#   }
+# }
 ```
 
 ### Property accessors
