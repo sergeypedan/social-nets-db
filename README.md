@@ -159,10 +159,12 @@ social_net.to_h
 ### Property accessors
 
 ```ruby
-social_net.color       #=> "#3C5A99"
-social_net.name        #=> "Facebook"
-social_net.uid         #=> "facebook"
-social_net.url         #=> "https://facebook.com"
+social_net.color  #=> "#3C5A99"
+social_net.name   #=> "Facebook"
+social_net.uid    #=> "facebook"
+social_net.domain #=> "facebook.com"
+social_net.url    #=> "https://facebook.com"
+social_net.icons  #=> { "font_awesome_4" => "facebook" }
 ```
 
 ### FontAwesome icon
