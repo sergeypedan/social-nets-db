@@ -234,6 +234,21 @@ model User < ApplicationRecord
 end
 ```
 
+This would be a standard approach:
+
+```ruby
+# model SocialNet < ApplicationRecord
+#   has_many :social_net_accounts
+# end
+```
+
+but instead we will use `SocialNetsDB::SocialNet` class instead of an ActiveRecord class:
+
+```ruby
+SocialNetsDB::SocialNet.find("facebook")
+SocialNetsDB::SocialNet.find_by(uid: "facebook")
+```
+
 ```ruby
 model SocialNetAccount < ApplicationRecord
   belongs_to :user
