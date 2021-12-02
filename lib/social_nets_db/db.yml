@@ -1,7 +1,7 @@
 behance:
   name: Behance
   icons:
-    font_awesome: behance
+    font_awesome_4: behance
   color: "#1769ff"
   domain: behance.com
   tags:
@@ -37,7 +37,7 @@ bitclout:
 blogger:
   name: Blogger
   icons:
-    font_awesome: "link"
+    font_awesome_4: "link"
   color: "#ff8000"
   domain: blogger.com
   tags:
@@ -58,7 +58,7 @@ discord:
 dribble:
   name: Dribble
   icons:
-    font_awesome: "dribble"
+    font_awesome_4: "dribble"
   color: "#ea4c89"
   domain: dribble.com
   tags:
@@ -72,7 +72,7 @@ dribble:
 email:
   name: E-mail
   icons:
-    font_awesome: "envelope-o"
+    font_awesome_4: "envelope-o"
   color: "#ea4c89"
   tags:
     - protocols
@@ -93,7 +93,7 @@ ens:
 facebook:
   name: Facebook
   icons:
-    font_awesome: "facebook"
+    font_awesome_4: "facebook"
   color: "#3C5A99"
   domain: facebook.com
   tags:
@@ -195,7 +195,7 @@ hh:
 github:
   name: GitHub
   icons:
-    font_awesome: "github"
+    font_awesome_4: "github"
   color: "#333333"
   domain: github.com
   tags:
@@ -208,7 +208,7 @@ github:
 gitlab:
   name: GitLab
   icons:
-    font_awesome: "gitlab"
+    font_awesome_4: "gitlab"
   color: "#fa7035"
   domain: gitlab.com
   tags:
@@ -220,7 +220,7 @@ gitlab:
 instagram:
   name: Instagram
   icons:
-    font_awesome: "instagram"
+    font_awesome_4: "instagram"
   color: "#e1306c"
   domain: instagram.com
   tags:
@@ -241,7 +241,7 @@ lbry:
 linkedin:
   name: LinkedIn
   icons:
-    font_awesome: "linkedin"
+    font_awesome_4: "linkedin"
   color: "#0077b5"
   domain: linkedin.com
   tags:
@@ -253,7 +253,7 @@ linkedin:
 livejournal:
   name: LiveJournal
   icons:
-    font_awesome: "livejournal"
+    font_awesome_4: "livejournal"
   color: "#00A3D9"
   domain: livejournal.com
   tags:
@@ -287,7 +287,7 @@ manosphere:
 medium:
   name: Medium
   icons:
-    font_awesome: "medium"
+    font_awesome_4: "medium"
   color: "#00ab6c"
   domain: medium.com
   tags:
@@ -334,7 +334,7 @@ odysee:
 odnoklassniki:
   name: Одноклассники
   icons:
-    font_awesome: "odnoklassniki"
+    font_awesome_4: "odnoklassniki"
   color: "#e47d08"
   domain: ok.ru
   tags:
@@ -346,7 +346,7 @@ odnoklassniki:
 paypal:
   name: PayPal
   icons:
-    font_awesome: "paypal"
+    font_awesome_4: "paypal"
   color: "#0070ba"
   domain: paypal.com
   tags:
@@ -390,7 +390,7 @@ rokfin:
 rumble:
   name: Rumble
   icons:
-    font_awesome: "play-circle"
+    font_awesome_4: "play-circle"
   color: "#74a441"
   domain: rumble.com
   tags:
@@ -402,7 +402,7 @@ rumble:
 stackoverflow:
   name: StackOverflow
   icons:
-    font_awesome: "stackoverflow"
+    font_awesome_4: "stackoverflow"
   color: "#F48024"
   domain: stackoverflow.com
   tags:
@@ -435,7 +435,7 @@ substack:
 telegram:
   name: Telegram
   icons:
-    font_awesome: "telegram"
+    font_awesome_4: "telegram"
   color: "#0088cc"
   domain: telegram.com
   tags:
@@ -458,7 +458,7 @@ tiktok:
 twitter:
   name: Twitter
   icons:
-    font_awesome: "twitter"
+    font_awesome_4: "twitter"
   color: "#1da1f2"
   domain: twitter.com
   tags:
@@ -481,7 +481,7 @@ upwork:
 vkontakte:
   name: Вконтакте
   icons:
-    font_awesome: "vk"
+    font_awesome_4: "vk"
   color: "#45668e"
   domain: vkontakte.com
   tags:
@@ -493,7 +493,7 @@ vkontakte:
 youtube:
   name: YouTube
   icons:
-    font_awesome: "youtube"
+    font_awesome_4: "youtube"
   color: "#ff0000"
   domain: youtube.com
   tags:
@@ -505,7 +505,7 @@ youtube:
 youtube_profile:
   name: YouTube
   icons:
-    font_awesome: "youtube"
+    font_awesome_4: "youtube"
   color: "#ff0000"
   domain: youtube.com
   tags:
@@ -516,7 +516,7 @@ youtube_profile:
 website:
   name: Web site
   icons:
-    font_awesome: "link"
+    font_awesome_4: "link"
   color: "#ff0000"
   domain:
   tags:

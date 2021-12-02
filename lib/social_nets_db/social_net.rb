@@ -38,10 +38,10 @@ class SocialNetsDB
 
 			if    username && page["by_username"]
 				fail ArgumentError, "Either a username or an account id must be provided" unless present_str?(username)
-				template.sub("${domain}", domain).sub("${uid}", username)
+				template.sub("${domain}", domain.to_s).sub("${uid}", username)
 			elsif account_id && page["by_account_id"]
 				fail ArgumentError, "Either a username or an account id must be provided" unless present_str?(account_id)
-				template.sub("${domain}", domain).sub("${uid}", account_id)
+				template.sub("${domain}", domain.to_s).sub("${uid}", account_id)
 			end
 		end
 

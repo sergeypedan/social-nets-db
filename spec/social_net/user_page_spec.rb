@@ -51,4 +51,16 @@ RSpec.describe SocialNetsDB::SocialNet, "#user_page" do
     it { is_expected.to eq "https://facebook.com/dhh" }
   end
 
+  context "for email" do
+    let(:username) { "address@gmail.com" }
+    let(:social_net_uid) { "email" }
+    it { is_expected.to eq "mailto:#{username}"}
+  end
+
+  context "for web link" do
+    let(:username) { "gmail.com" }
+    let(:social_net_uid) { "website" }
+    it { is_expected.to eq username}
+  end
+
 end

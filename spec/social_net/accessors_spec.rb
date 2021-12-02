@@ -11,7 +11,7 @@ RSpec.describe SocialNetsDB::SocialNet do
   end
 
   describe "#icons" do
-    it { expect(subject.icons["font_awesome"]).to eq "facebook" }
+    it { expect(subject.icons["font_awesome_4"]).to eq "facebook" }
   end
 
   describe "#name" do

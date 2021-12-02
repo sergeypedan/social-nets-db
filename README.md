@@ -16,7 +16,7 @@ It stores data about social nets in a Ruby hash like so:
   name: Behance
   uid: behance
   icons:
-    font_awesome: "behance"
+    font_awesome_4: "behance"
   color: "#1769ff"
   url: behance.com
   tags:
@@ -54,7 +54,7 @@ ul
   - accounts.each do |account|
     - net = SocialNetsDB.find account[:net_uid]
     li
-      = fa_icon net.icons["font_awesome"], style: "color: #{net.color}"
+      = fa_icon net.icons["font_awesome_4"], style: "color: #{net.color}"
       =< link_to net.name, \
                  net.user_page(username: account[:username], account_id: account[:account_id]), \
                  target: "_blank", \
