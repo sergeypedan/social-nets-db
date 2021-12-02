@@ -96,7 +96,7 @@ class SocialNetsDB
 			end
 
 			def uids
-				RECORDS.map { |uid, data| data["uid"].to_s }
+				RECORDS.keys.map(&:to_s)
 			end
 
 			def values_for_select
