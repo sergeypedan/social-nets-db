@@ -14,8 +14,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["sergey.pedan@gmail.com"]
   spec.license       = "MIT"
 
-  spec.summary       = "Non-comprehensive database of social nets with helpers (color, user page URL, FontAwesome icon etc.) packed in a Ruby gem"
-  spec.description   = spec.summary
+  spec.summary       = "A non-comprehensive database of social nets packed in a Ruby gem"
+  spec.description   = "#{spec.summary}. We have helpers for color, user page URL, FontAwesome icon, social net domain, some tags for grouping social nets, etc."
 
   spec.homepage      = "https://github.com/sergeypedan/social-nets-db"
   spec.metadata      = { "changelog_uri"     => "https://github.com/sergeypedan/social-nets-db/blob/master/CHANGELOG.md",
@@ -37,9 +37,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", ">= 2", "< 3"
   spec.add_development_dependency "bundler-audit", ">= 0.9", "< 1"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "pry-byebug"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "pry", "< 1"
+  spec.add_development_dependency "pry-byebug", "~> 3"
+  spec.add_development_dependency "rake", "~> 13"
   spec.add_development_dependency "rspec", "~> 3"
-  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "rubocop", "~> 1"
 end

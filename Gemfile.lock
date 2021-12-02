@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social_nets_db (1.0.0)
+    social_nets_db (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -61,11 +61,11 @@ PLATFORMS
 DEPENDENCIES
   bundler (>= 2, < 3)
   bundler-audit (>= 0.9, < 1)
-  pry
-  pry-byebug
-  rake
+  pry (< 1)
+  pry-byebug (~> 3)
+  rake (~> 13)
   rspec (~> 3)
-  rubocop
+  rubocop (~> 1)
   social_nets_db!
 
 BUNDLED WITH
