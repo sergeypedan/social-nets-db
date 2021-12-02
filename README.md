@@ -12,20 +12,19 @@ gem "social_nets_db"
 It stores data about social nets in a Ruby hash like so:
 
 ```yaml
--
+behance:
   name: Behance
-  uid: behance
   icons:
-    font_awesome_4: "behance"
+    font_awesome_4: behance
   color: "#1769ff"
-  url: behance.com
+  domain: behance.com
   tags:
-    - recruiting
     - art
     - design
+    - recruiting
   profile_url:
-    by_username: https://behance.com/${username}
-    by_account_id: "https://behance.com/${account_id}"
+    by_username: "https://${domain}/${uid}"
+    by_account_id: "https://${domain}/${uid}"
 ```
 
 [Peek into the source](https://github.com/sergeypedan/social-nets-db/blob/master/lib/social_net_db/db.yml).

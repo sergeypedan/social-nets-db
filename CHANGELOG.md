@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.5] - 2021-12-03
+
+- Corrects an error in `uids`
+
 ## [0.0.4] - 2021-12-03
 
 - Corrects an error in `values_for_select`
