@@ -1,5 +1,7 @@
 # Social nets DB
 
+[![Gem Version](https://badge.fury.io/rb/social_nets_db.svg)](https://badge.fury.io/rb/social_nets_db)
+
 ## Installation
 
 ```ruby
