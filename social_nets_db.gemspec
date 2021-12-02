@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.summary          = "A non-comprehensive database of social nets packed in a Ruby gem"
   spec.description      = "#{spec.summary}. We have helpers for color, user page URL, FontAwesome icon, social net domain, some tags for grouping social nets, etc."
 
+  spec.homepage         =  "https://sergeypedan.ru/open_source_projects/social-nets-db"
   spec.metadata         = { "changelog_uri"     => "https://github.com/sergeypedan/social-nets-db/blob/master/CHANGELOG.md",
                             "documentation_uri" => "https://www.rubydoc.info/gems/#{spec.name}",
                             "homepage_uri"      => spec.homepage,
