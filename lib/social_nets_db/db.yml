@@ -85,7 +85,8 @@ ens:
   color: "#5284ff"
   domain: ens.domains
   tags:
-    -
+    - crypto
+    - protocols
   profile_url:
     by_username: https://${uid}.eth
 
