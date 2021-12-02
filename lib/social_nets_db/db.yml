@@ -72,7 +72,7 @@ dribble:
 email:
   name: E-mail
   icons:
-    font_awesome: "at"
+    font_awesome: "envelope-o"
   color: "#ea4c89"
   tags:
     - protocols
