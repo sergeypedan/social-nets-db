@@ -2,7 +2,7 @@ require "bundler/setup"
 require "pry"
 require "pry-byebug"
 
-require "integral/social_net"
+require "social_nets_db"
 
 
 RSpec.configure do |config|

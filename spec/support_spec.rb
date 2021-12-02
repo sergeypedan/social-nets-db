@@ -2,9 +2,9 @@
 
 require "spec_helper"
 
-RSpec.describe Integral::SocialNet, ".present_str?" do
+RSpec.describe SocialNetsDB::SocialNet, ".present_str?" do
 
-  subject { Integral::SocialNet.present_str?(arg) }
+  subject { described_class.present_str?(arg) }
 
   context "when no argument" do
     it do

@@ -2,9 +2,9 @@
 
 require "spec_helper"
 
-RSpec.describe Integral::SocialNet, "#user_page" do
+RSpec.describe SocialNetsDB::SocialNet, "#user_page" do
 
-  subject { described_class.new(social_net_uid).user_page(username: username, account_id: account_id) }
+  subject { described_class.find(social_net_uid).user_page(username: username, account_id: account_id) }
 
   let(:account_id) { nil }
   let(:username)   { nil }
@@ -18,7 +18,7 @@ RSpec.describe Integral::SocialNet, "#user_page" do
     end
 
     context "when by_username missing" do
-      let(:social_net_uid) { "upwork" }
+      let(:social_net_uid) { "discord" }
       it { is_expected.to be_nil }
     end
   end

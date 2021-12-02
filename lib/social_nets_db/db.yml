@@ -1,0 +1,525 @@
+behance:
+  name: Behance
+  icons:
+    font_awesome: behance
+  color: "#1769ff"
+  domain: behance.com
+  tags:
+    - art
+    - design
+    - recruiting
+  profile_url:
+    by_username: "https://${domain}/${uid}"
+    by_account_id: "https://${domain}/${uid}"
+
+bitchute:
+  name: Bitchute
+  icons:
+  color: "#ef4137"
+  domain: bitchute.com
+  tags:
+    - video-hosting
+    - anti-censorship
+  profile_url:
+    by_username: https://${domain}/profile/${uid}
+
+bitclout:
+  name: Bitclout
+  icons:
+  color: "#ef4137"
+  domain: bitclout.com
+  tags:
+    - social net
+    - crypto
+  profile_url:
+    by_username: https://${domain}/u/${uid}
+
+blogger:
+  name: Blogger
+  icons:
+    font_awesome: "link"
+  color: "#ff8000"
+  domain: blogger.com
+  tags:
+    - obsolete
+  profile_url:
+    by_username: https://${uid}.blogspot.com
+
+discord:
+  name: Discord
+  icons:
+  color: "#7289da"
+  domain: discord.com
+  tags:
+    - gaming
+  profile_url:
+    by_account_id: "https://discord.gg/${uid}"
+
+dribble:
+  name: Dribble
+  icons:
+    font_awesome: "dribble"
+  color: "#ea4c89"
+  domain: dribble.com
+  tags:
+    - art
+    - design
+    - portfolio
+  profile_url:
+    by_username: https://${domain}/${uid}
+    by_account_id: "https://${domain}/${uid}"
+
+email:
+  name: E-mail
+  icons:
+    font_awesome: "at"
+  color: "#ea4c89"
+  domain: gmail.com
+  tags:
+    - protocols
+  profile_url:
+    by_username: ${uid}
+
+ens:
+  name: Ethereum namespace
+  icons:
+  color: "#5284ff"
+  domain: ens.domains
+  tags:
+    -
+  profile_url:
+    by_username: https://${uid}.eth
+
+facebook:
+  name: Facebook
+  icons:
+    font_awesome: "facebook"
+  color: "#3C5A99"
+  domain: facebook.com
+  tags:
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+    by_account_id: "https://${domain}/${uid}"
+
+fl.ru:
+  name: FL
+  icons:
+  color: "#4ea828"
+  domain: fl.ru
+  tags:
+    - free-lance
+    - design
+    - programming
+  profile_url:
+    by_username: https://${domain}/users/${uid}/
+
+flote:
+  name: Flote
+  icons:
+  color: "#01f"
+  domain: flote.app
+  tags:
+    - anti-censorship
+    - social net
+  profile_url:
+    by_username: https://${domain}/user/${uid}/
+
+freelansim:
+  name: Фрилансим
+  icons:
+  color: "#4abfb4"
+  domain: freelansim.ru
+  tags:
+    - free-lance
+    - design
+    - programming
+  profile_url:
+    by_username: https://${domain}/freelancers/${uid}
+
+gab:
+  name: Gab
+  icons:
+  color: "#21cf7a"
+  domain: gab.com
+  tags:
+    - anti-censorship
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+gettr:
+  name: Gettr
+  icons:
+  color: "#ff0013"
+  domain: gettr.com
+  tags:
+    - anti-censorship
+    - social net
+  profile_url:
+    by_username: https://${domain}/user/${uid}
+
+habr:
+  name: Habrahabr
+  icons:
+  color: "#65a3be"
+  domain: habr.com
+  tags:
+    - recruiting
+    - programming
+    - blog
+  profile_url:
+    by_username: https://${domain}/ru/users/${uid}/
+
+habr-career:
+  name: Хабр Карьера
+  icons:
+  color: "#64c178"
+  domain: career.habr.com
+  tags:
+    - recruiting
+    - programming
+  profile_url:
+    by_username: https://${domain}/${uid}/
+
+hh:
+  name: HeadHunter
+  icons:
+  color: "#D6001C"
+  domain: hh.ru
+  tags:
+    - recruiting
+  profile_url:
+    by_account_id: "https://${domain}/resume/${uid}"
+
+github:
+  name: GitHub
+  icons:
+    font_awesome: "github"
+  color: "#333333"
+  domain: github.com
+  tags:
+    - programming
+    - recruiting
+  profile_url:
+    by_username: https://${domain}/${uid}
+    by_account_id: "https://${domain}/${uid}"
+
+gitlab:
+  name: GitLab
+  icons:
+    font_awesome: "gitlab"
+  color: "#fa7035"
+  domain: gitlab.com
+  tags:
+    - programming
+    - recruiting
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+instagram:
+  name: Instagram
+  icons:
+    font_awesome: "instagram"
+  color: "#e1306c"
+  domain: instagram.com
+  tags:
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+lbry:
+  name: LBRY
+  icons:
+  color: "#38d9a9"
+  domain: lbry.tv
+  tags:
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/@${uid}
+
+linkedin:
+  name: LinkedIn
+  icons:
+    font_awesome: "linkedin"
+  color: "#0077b5"
+  domain: linkedin.com
+  tags:
+    - recruiting
+    - social net
+  profile_url:
+    by_username: https://${domain}/in/${uid}
+
+livejournal:
+  name: LiveJournal
+  icons:
+    font_awesome: "livejournal"
+  color: "#00A3D9"
+  domain: livejournal.com
+  tags:
+    - blog
+    - obsolete
+  profile_url:
+    by_username: https://${uid}.${domain}
+
+locals:
+  name: Locals
+  icons:
+  color: "#e73348"
+  domain: locals.com
+  tags:
+    - anti-censorship
+    - paywall
+  profile_url:
+    by_username: https://${uid}.${domain}
+
+manosphere:
+  name: Manosphere
+  icons:
+  color: "#d84c47"
+  domain: manosphere.tv
+  tags:
+    - anti-censorship
+    - paywall
+  profile_url:
+    by_username: https://${domain}/@${uid}
+
+medium:
+  name: Medium
+  icons:
+    font_awesome: "medium"
+  color: "#00ab6c"
+  domain: medium.com
+  tags:
+    - blog
+    - paywall
+  profile_url:
+    by_username: https://${uid}.${domain}
+
+minds:
+  name: Minds
+  icons:
+  color: "#ffdd63"
+  domain: minds.com
+  tags:
+    - anti-censorship
+    - crypto
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+my.mail.ru:
+  name: Мой мир
+  icons:
+  color: "#005FF9"
+  domain: my.mail.ru
+  tags:
+    - obsolete
+    - social net
+  profile_url:
+    by_username: https://${domain}/mail/${uid}/
+
+odysee:
+  name: Odysee
+  icons:
+  color: "#000000"
+  domain: odysee.com
+  tags:
+    - anti-censorship
+    - crypto
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/@${uid}/
+
+odnoklassniki:
+  name: Одноклассники
+  icons:
+    font_awesome: "odnoklassniki"
+  color: "#e47d08"
+  domain: ok.ru
+  tags:
+    - obsolete
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}/
+
+paypal:
+  name: PayPal
+  icons:
+    font_awesome: "paypal"
+  color: "#0070ba"
+  domain: paypal.com
+  tags:
+    - payment service
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+patreon:
+  name: Patreon
+  icons:
+  color: "#ff424d"
+  domain: patreon.com
+  tags:
+    - paywall
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+remoteok:
+  name: RemoteOK
+  icons:
+  color: "#ff4742"
+  domain: remoteok.io
+  tags:
+    - design
+    - programming
+    - recruiting
+  profile_url:
+    by_username: https://${domain}/@${uid}
+
+rokfin:
+  name: Rokfin
+  icons:
+  color: "#08AD9F"
+  domain: rokfin.com
+  tags:
+    - anti-censorship
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+rumble:
+  name: Rumble
+  icons:
+    font_awesome: "play-circle"
+  color: "#74a441"
+  domain: rumble.com
+  tags:
+    - anti-censorship
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/c/${uid}
+
+stackoverflow:
+  name: StackOverflow
+  icons:
+    font_awesome: "stackoverflow"
+  color: "#F48024"
+  domain: stackoverflow.com
+  tags:
+    - recruiting
+    - programming
+  profile_url:
+    by_account_id: "https://${domain}/users/${uid}?tab=profile"
+
+subscribestar:
+  name: SubscribeStar
+  icons:
+  color: "#ff4081"
+  domain: subscribestar.com
+  tags:
+    - paywall
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+substack:
+  name: SubStack
+  icons:
+  color: "#ff4081"
+  domain: substack.com
+  tags:
+    - paywall
+    - blog
+  profile_url:
+    by_username: https://${uid}.${domain}
+
+telegram:
+  name: Telegram
+  icons:
+    font_awesome: "telegram"
+  color: "#0088cc"
+  domain: telegram.com
+  tags:
+    - anti-censorship
+    - blog
+    - messenger
+  profile_url:
+    by_username: https://t.me/${uid}
+
+tiktok:
+  name: TikTok
+  icons:
+  color: "#fe2c55"
+  domain: tiktok.com
+  tags:
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/@${uid}
+
+twitter:
+  name: Twitter
+  icons:
+    font_awesome: "twitter"
+  color: "#1da1f2"
+  domain: twitter.com
+  tags:
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+upwork:
+  name: UpWork
+  icons:
+  color: "#37A000"
+  domain: upwork.com
+  tags:
+    - design
+    - freelancers
+    - programming
+  profile_url:
+    by_account_id: "https://${domain}/freelancers/~${uid}"
+
+vkontakte:
+  name: Вконтакте
+  icons:
+    font_awesome: "vk"
+  color: "#45668e"
+  domain: vkontakte.com
+  tags:
+    - social net
+  profile_url:
+    by_username: https://${domain}/${uid}
+    by_account_id: "https://${domain}/id${uid}"
+
+youtube:
+  name: YouTube
+  icons:
+    font_awesome: "youtube"
+  color: "#ff0000"
+  domain: youtube.com
+  tags:
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/c/${uid}
+    by_account_id: "https://${domain}/channel/${uid}"
+
+youtube_profile:
+  name: YouTube
+  icons:
+    font_awesome: "youtube"
+  color: "#ff0000"
+  domain: youtube.com
+  tags:
+    - video-hosting
+  profile_url:
+    by_username: https://${domain}/${uid}
+
+website:
+  name: Web site
+  icons:
+    font_awesome: "link"
+  color: "#ff0000"
+  domain:
+  tags:
+    - protocols
+  profile_url:
+    by_username: ${uid}

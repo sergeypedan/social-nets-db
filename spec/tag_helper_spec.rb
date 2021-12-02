@@ -2,9 +2,9 @@
 
 require "spec_helper"
 
-RSpec.describe Integral::TagHelper, ".tag_attributes_to_s" do
+RSpec.describe TagHelper, ".tag_attributes_to_s" do
 
-  include Integral::TagHelper
+  include TagHelper
 
   subject { tag_attributes_to_s(argument) }
 
