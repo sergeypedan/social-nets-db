@@ -74,11 +74,10 @@ email:
   icons:
     font_awesome: "at"
   color: "#ea4c89"
-  domain: gmail.com
   tags:
     - protocols
   profile_url:
-    by_username: ${uid}
+    by_username: "mailto:${uid}"
 
 ens:
   name: Ethereum namespace
