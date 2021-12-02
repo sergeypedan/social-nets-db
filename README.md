@@ -57,7 +57,7 @@ ul
   - accounts.each do |account|
     - net = SocialNetsDB::SocialNet.find account[:net_uid]
     li
-    	- fa_icon_uid = net.icons["font_awesome_4"] || "link"
+      - fa_icon_uid = net.icons["font_awesome_4"] || "link"
       = fa_icon fa_icon_uid, class: "fw", style: "color: #{net.color}"
       =< link_to net.name, \
                  net.user_page(username: account[:username], account_id: account[:account_id]), \

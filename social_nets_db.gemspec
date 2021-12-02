@@ -8,19 +8,19 @@
 require_relative "lib/social_nets_db/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "social_nets_db"
-  spec.version       = SocialNetsDB::VERSION
-  spec.authors       = ["Sergey Pedan"]
-  spec.email         = ["sergey.pedan@gmail.com"]
-  spec.license       = "MIT"
+  spec.name             = "social_nets_db"
+  spec.version          = SocialNetsDB::VERSION
+  spec.authors          = ["Sergey Pedan"]
+  spec.email            = ["sergey.pedan@gmail.com"]
+  spec.license          = "MIT"
 
-  spec.summary       = "A non-comprehensive database of social nets packed in a Ruby gem"
-  spec.description   = "#{spec.summary}. We have helpers for color, user page URL, FontAwesome icon, social net domain, some tags for grouping social nets, etc."
+  spec.summary          = "A non-comprehensive database of social nets packed in a Ruby gem"
+  spec.description      = "#{spec.summary}. We have helpers for color, user page URL, FontAwesome icon, social net domain, some tags for grouping social nets, etc."
 
-  spec.homepage      = "https://github.com/sergeypedan/social-nets-db"
-  spec.metadata      = { "changelog_uri"     => "https://github.com/sergeypedan/social-nets-db/blob/master/CHANGELOG.md",
-                         "homepage_uri"      => spec.homepage,
-                         "source_code_uri"   => "https://github.com/sergeypedan/social-nets-db.git"}
+  spec.metadata         = { "changelog_uri"     => "https://github.com/sergeypedan/social-nets-db/blob/master/CHANGELOG.md",
+                            "documentation_uri" => "https://www.rubydoc.info/gems/#{spec.name}",
+                            "homepage_uri"      => spec.homepage,
+                            "source_code_uri"   => "https://github.com/sergeypedan/social-nets-db" }
 
   spec.extra_rdoc_files = Dir["README*", "LICENSE*"]
   spec.rdoc_options     = ["--charset=UTF-8"]
