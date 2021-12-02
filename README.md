@@ -9,7 +9,7 @@ gem "social_nets_db"
 
 ## Internals
 
-It stores data about social nets in a Ruby hash like so:
+It stores data about popular social nets, video hostings etc. in a YAML file [`db.yml`](https://github.com/sergeypedan/social-nets-db/blob/master/lib/social_nets_db/db.yml):
 
 ```yaml
 behance:
@@ -46,18 +46,20 @@ ruby:
     { net_uid: "instagram", username: "dhh" },
     { net_uid: "facebook",  username: "d-h-h" },
     { net_uid: "twitter",   username: "d_h_h" },
-    { net_uid: "upwork",    account_id: "401298374012374" }
+    { net_uid: "upwork",    account_id: "401298374012374" },
+    { net_uid: "email",     username: "elon@musk.io" },
+    { net_uid: "website",   username: "musk.io" }
   ]
 
 ul
   - accounts.each do |account|
-    - net = SocialNetsDB.find account[:net_uid]
+    - net = SocialNetsDB::SocialNet.find account[:net_uid]
     li
-      = fa_icon net.icons["font_awesome_4"], style: "color: #{net.color}"
+    	- fa_icon_uid = net.icons["font_awesome_4"] || "link"
+      = fa_icon fa_icon_uid, class: "fw", style: "color: #{net.color}"
       =< link_to net.name, \
                  net.user_page(username: account[:username], account_id: account[:account_id]), \
-                 target: "_blank", \
-                 rel: "noopener noreferrer"
+                 target: "_blank", rel: "noopener noreferrer"
 ```
 
 Here the gem:
@@ -65,15 +67,13 @@ Here the gem:
 - builds the URL to user page
 
 	```ruby
-	net.user_page(username: account[:username])
-	# "https://facebook.com/dhh"
+	net.user_page(username: account[:username]) #=> "https://facebook.com/dhh"
 	```
 
 - gives you the correct name of the social net
 
 	```ruby
-	net.name
-	# "Facebook"
+	net.name #=> "Facebook"
 	```
 
 ### 2. To help building a `<select>` with social nets when storing user's account link
@@ -83,7 +83,7 @@ Here the gem:
   = f.fields_for :social_net_accounts do |sna|
     .form-group
       = sna.label  :social_net_uid, class: "control-label"
-      = sna.select :social_net_uid, SocialNetsDB.values_for_select, {}, class: "form-control"
+      = sna.select :social_net_uid, SocialNetsDB::SocialNet.values_for_select, {}, class: "form-control"
 ```
 
 which produces
@@ -108,12 +108,14 @@ See section “[Using with Rails](#use-with-rails)” below for more details.
 
 ## API
 
-### Instance of `SocialNetsDB` class
+### Find a social net record
 
-Initialize an instance with social net UID.
+Use either one:
 
 ```ruby
-social_net = SocialNetsDB.find("facebook")
+social_net = SocialNetsDB::SocialNet.find("facebook")
+social_net = SocialNetsDB::SocialNet.find_by(uid: "facebook")
+social_net = SocialNetsDB::SocialNet.find_by_uid("facebook")
 # => #<SocialNetsDB:0x00007fddc0041b40 @uid="facebook">
 ```
 
@@ -130,45 +132,8 @@ SocialNetsDB.uids
 #    "habr",
 #    "github",
 #    "instagram",
-#    "livejournal",
-#    "linkedin",
-#    "medium",
-#    "my.mail.ru",
-#    "odnoklassniki",
-#    "stackoverflow",
-#    "telegram",
-#    "twitter",
-#    "upwork",
-#    "vkontakte",
-#    "youtube"
+#    ...
 #  ]
-```
-
-If you try to initialize with an unsupported UID, and you will also get the list along with an Exception:
-
-```ruby
-SocialNetsDB.find("diaspora")
-# ArgumentError (Social net with UID test is not supported.
-#
-# Currently supported UIDs are: behance, dribble, facebook, github, instagram, livejournal, linkedin, medium, my.mail.ru, odnoklassniki, stackoverflow, telegram, twitter, vkontakte, youtube)
-```
-
-### find_by
-
-If you don't want to rescue exceptions while initializing, you can use `find_by(uid:)` instead.
-
-It returns an instance:
-
-```ruby
-SocialNetsDB.find_by(uid: "facebook")
-# => #<SocialNetsDB:0x00007fddc0041b40 @uid="facebook">
-```
-
-or `nil`:
-
-```ruby
-SocialNetsDB.find_by(uid: "blabla")
-# => nil
 ```
 
 ### Data
@@ -193,7 +158,6 @@ social_net.to_h
 
 ```ruby
 social_net.color       #=> "#3C5A99"
-social_net.fa_icon_id  #=> "facebook"
 social_net.name        #=> "Facebook"
 social_net.uid         #=> "facebook"
 social_net.url         #=> "https://facebook.com"
@@ -201,26 +165,11 @@ social_net.url         #=> "https://facebook.com"
 
 ### FontAwesome icon
 
-Assumes you have [FontAwesome](https://fontawesome.com/v4.7.0/) installed. Just builds the HTML tag.
-
 ```ruby
-social_net.fa_icon
-#=> <span class="fa fa-facebook" style="color: #3C5A99"></span>
+social_net.icons["font_awesome_4"] #=> "facebook"
 ```
 
-It accepts a Hash with attributes, like Rails `tag_helper` (but not for `data: {}` — maybe later):
-
-```ruby
-social_net.fa_icon(class: "fa-fw", id: "my-id", style: "margin-top: 10px")
-#=> <span class="fa fa-facebook fa-fw" style="color: #3C5A99; margin-top: 10px;" id="my-id"></span>
-```
-
-Exporting social net brand color to `styles` attribute can be turned off by passing `color: false` Hash pair among others:
-
-```ruby
-social_net.fa_icon(color: false, class: "fa-fw", id: "my-id", style: "margin-top: 10px")
-#=> <span class="fa fa-facebook fa-fw" style="cmargin-top: 10px;" id="my-id"></span>
-```
+Currently, only FontAwesome v4 icons are store. I plan adding newer version of FA, maybe other icon providers, and also SVGs.
 
 ### User's page URL
 
@@ -229,7 +178,7 @@ social_net.user_page(username: "dhh")              #=> "https://facebook.com/dhh
 social_net.user_page(account_id: "id1234566789")   #=> "https://facebook.com/account/id1234566789"
 ```
 
-If you pass a username, whild the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
+If you pass a username, while the `SocialNet` supports user page URLs only via account ids, the method call will return `nil`.
 
 You can check which is supported
 
@@ -249,13 +198,13 @@ This gem is Rails-agnostic, but you can use it in Rails like so:
   = f.fields_for :social_net_accounts do |sna|
     .form-group
       = sna.label  :social_net_uid, class: "control-label"
-      = sna.select :social_net_uid, SocialNetsDB.values_for_select, {}, class: "form-control"
+      = sna.select :social_net_uid, SocialNetsDB::SocialNet.values_for_select, {}, class: "form-control"
 ```
 
 because
 
 ```ruby
-SocialNetsDB.values_for_select
+SocialNetsDB::SocialNet.values_for_select
 #=> [
 #     ["Behance",       "behance"],
 #     ["Dribble",       "dribble"],
@@ -292,7 +241,7 @@ model SocialNetAccount < ApplicationRecord
   validates :username,       presence: true, if: Proc.new { |record| record.account_id.blank? }
 
   def social_net
-    @social_net ||= SocialNetsDB.find(self.social_net_uid)
+    @social_net ||= SocialNetsDB::SocialNet.find(self.social_net_uid)
   end
 
   def user_page
