@@ -92,15 +92,15 @@ class SocialNetsDB
 			end
 
 			def names
-				RECORDS.map { |uid, data| data[:name] }
+				RECORDS.map { |uid, data| data["name"] }
 			end
 
 			def uids
-				RECORDS.map { |uid, data| data[:uid].to_s }
+				RECORDS.map { |uid, data| data["uid"].to_s }
 			end
 
 			def values_for_select
-				RECORDS.map { |uid, data| [data[:name], uid] }
+				RECORDS.map { |uid, data| [data["name"], uid] }
 			end
 
 			alias_method :find, :find_by_uid
