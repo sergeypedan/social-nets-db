@@ -503,7 +503,7 @@ youtube:
     by_account_id: "https://${domain}/channel/${uid}"
 
 youtube_profile:
-  name: YouTube
+  name: YouTube profile
   icons:
     font_awesome_4: "youtube"
   color: "#ff0000"
