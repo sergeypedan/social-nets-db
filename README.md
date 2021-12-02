@@ -141,13 +141,13 @@ SocialNetsDB.uids
 ```ruby
 social_net.to_h #=>
 # {
-#   "name" => "Facebook",
-#   "icons" => { "font_awesome_4" => "facebook" },
-#   "color" => "#3C5A99",
+#   "name"   => "Facebook",
+#   "icons"  => { "font_awesome_4" => "facebook" },
+#   "color"  => "#3C5A99",
 #   "domain" => "facebook.com",
-#   "tags" => ["social net"],
+#   "tags"   => ["social net"],
 #   "profile_url" => {
-#     "by_username" => "https://${domain}/${uid}",
+#     "by_username"   => "https://${domain}/${uid}",
 #     "by_account_id" => "https://${domain}/${uid}"
 #   }
 # }
