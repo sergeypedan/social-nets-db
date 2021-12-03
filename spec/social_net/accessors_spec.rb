@@ -30,4 +30,38 @@ RSpec.describe SocialNetsDB::SocialNet do
     it { expect(subject.url).to eq "https://facebook.com" }
   end
 
+  describe "#tags" do
+    let(:data) do
+      {
+        "name"   => "Facebook",
+        "icons"  => { "font_awesome_4" => "facebook" },
+        "color"  => "#3C5A99",
+        "domain" => "facebook.com",
+        "tags"   => tags,
+        "profile_url" => {
+          "by_username"   => "https://${domain}/${uid}",
+          "by_account_id" => "https://${domain}/${uid}"
+        }
+      }
+    end
+
+    context "when a social net has no tags" do
+      subject(:net) { SocialNetsDB::SocialNet.new("hohoho", data) }
+      let(:tags) { [] }
+      it { expect(subject.tags).to eq tags }
+    end
+
+    context "when a social net has 1 tag" do
+      subject(:net) { SocialNetsDB::SocialNet.new("hohoho", data) }
+      let(:tags) { ["one"] }
+      it { expect(subject.tags).to eq tags }
+    end
+
+    context "when a social net has many tags" do
+      subject(:net) { SocialNetsDB::SocialNet.new("hohoho", data) }
+      let(:tags) { ["one", "two"] }
+      it { expect(subject.tags).to eq tags }
+    end
+  end
+
 end

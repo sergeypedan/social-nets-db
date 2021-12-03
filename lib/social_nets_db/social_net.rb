@@ -17,11 +17,12 @@ class SocialNetsDB
 
 		attr_accessor :uid
 
-		[:color, :domain, :icons, :name].each do |method_symbol|
-			define_method(method_symbol) do
-				to_h[method_symbol.to_s]
-			end
-		end
+    [:color, :domain, :icons, :name, :tags].each do |method_symbol|
+      define_method(method_symbol) do
+        fallback_value = method_symbol == :tags ? [] : nil
+        @data.fetch(method_symbol.to_s, fallback_value)
+      end
+    end
 
 		def to_h
 			self.class.send :raw_data_for, @uid

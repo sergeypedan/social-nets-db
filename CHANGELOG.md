@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.6] - 2021-12-03
+
+- Corrects data source of accessor methods
+
 ## [0.0.5] - 2021-12-03
 
 - Corrects an error in `uids`
