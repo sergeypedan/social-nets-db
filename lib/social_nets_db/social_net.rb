@@ -9,6 +9,9 @@ class SocialNetsDB
 		extend  FnValidations
 		include FnValidations
 
+    # @param [String, Symbol] uid Social net UID (which must be among the top-level keys in db.yml)
+    # @param [Hash] data
+    #
 		def initialize(uid, data)
 			validate_argument_type! data, Hash
 			validate_argument_type! uid, [String, Symbol]
@@ -24,28 +27,39 @@ class SocialNetsDB
       end
     end
 
+    # @return [Hash] Raw data we have on the initialized social net
+    #
 		def to_h
 			self.class.send :raw_data_for, @uid
 		end
 
+    # @return [String] full URL of the social net
+    #
 		def url
 			"https://#{domain}"
 		end
 
+    # @return [String] full URL of user’s page in the social net
+    # @param [String, Symbol, Integer] username
+    # @param [String, Symbol, Integer] username
+    # @example
+    #   SocialNetsDB::SocialNet.find("facebook").user_page(username: "dhh")
+    #   #=> "https://facebook.com/dhh"
+    #
 		def user_page(username: nil, account_id: nil)
 			return unless page = to_h["profile_url"]
-			return unless template = page["by_username"] || page["by_account_id"]
-			uid = [username, account_id].select { present_str? _1 }.first or fail(ArgumentError, "Either a username or an account id must be provided")
-
-			if    username && page["by_username"]
-				fail ArgumentError, "Either a username or an account id must be provided" unless present_str?(username)
-				template.sub("${domain}", domain.to_s).sub("${uid}", username)
-			elsif account_id && page["by_account_id"]
-				fail ArgumentError, "Either a username or an account id must be provided" unless present_str?(account_id)
-				template.sub("${domain}", domain.to_s).sub("${uid}", account_id)
-			end
+      fail(ArgumentError, "Either a username or an account id must be provided") if [username, account_id].none?
+      if    username   &&  page["by_username"]
+          validate_argument_type! username, [String, Symbol, Integer]
+  				page["by_username"].sub("${domain}", domain.to_s).sub("${uid}", username.to_s)
+      elsif account_id &&  page["by_account_id"]
+          validate_argument_type! account_id, [String, Symbol, Integer]
+  				page["by_account_id"].sub("${domain}", domain.to_s).sub("${uid}", account_id.to_s)
+      end
 		end
 
+    # @return [Array] available methods for bilding user page URL
+    #
 		def user_page_methods
 			["account_id", "username"].select { |key| present_str? to_h.dig("profile_url", "by_#{key}") }
 		end
@@ -56,12 +70,15 @@ class SocialNetsDB
 		class << self
 
 			# TODO this must be transofrmed into array of structs
+      # @return [Array<SocialNetsDB::SocialNet>] a list of all social nets initialized as objects
 			def all
-				RECORDS
+				RECORDS.map { |uid, data| new(uid, data) }
 			end
+
 
 			# @param [String] name Social network name
 			# @param [String, Symbol] uid Social network UID
+      # @return [SocialNetsDB::SocialNet, nil]
 			#
 			def find_by(name: nil, uid: nil)
 				return find_by_uid(uid)   if present_str?(uid)
@@ -69,13 +86,19 @@ class SocialNetsDB
 				fail ArgumentError, "`name:` or `uid:` must be provided. You are passing name: #{name.inspect}, uid: #{uid.inspect}"
 			end
 
+
+      # @param [String] name Social network name
+      # @return [SocialNetsDB::SocialNet, nil]
+      #
 			def find_by_name(name)
 				validate_argument_presence! name
 				return unless record = RECORDS.select { |uid, data| data["name"] == name }.first
 				find_by_uid record[0]
 			end
 
+
 			# @param [String, Symbol] uid Social network UID
+      # @return [SocialNetsDB::SocialNet, nil]
 			#
 			def find_by_uid(uid)
 				validate_argument_type! uid, String

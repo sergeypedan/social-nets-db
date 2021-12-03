@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.7] - 2021-12-03
+
+- Improves and corrects user page method
+- Corrects .all method
+- More documentation
+
 ## [0.0.6] - 2021-12-03
 
 - Corrects data source of accessor methods

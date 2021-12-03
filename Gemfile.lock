@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    social_nets_db (0.0.5)
+    social_nets_db (0.0.7)
 
 GEM
   remote: https://rubygems.org/
