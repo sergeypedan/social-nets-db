@@ -122,7 +122,7 @@ social_net = SocialNetsDB::SocialNet.find_by_uid("facebook")
 Which are supported UIDs?
 
 ```ruby
-SocialNetsDB.uids
+SocialNetsDB::SocialNet.uids
 #=> [
 #    "behance",
 #    "dribble",
@@ -253,7 +253,7 @@ model SocialNetAccount < ApplicationRecord
   belongs_to :user
 
   validates :account_id,     presence: true, if: Proc.new { |record| record.username.blank? }
-  validates :social_net_uid, presence: true, inclusion: { in: SocialNetsDB.uids }
+  validates :social_net_uid, presence: true, inclusion: { in: SocialNetsDB::SocialNet.uids }
   validates :username,       presence: true, if: Proc.new { |record| record.account_id.blank? }
 
   def social_net
