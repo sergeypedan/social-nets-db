@@ -10,6 +10,6 @@ require_relative "social_nets_db/social_net"
 
 class SocialNetsDB
 
-  RECORDS = YAML.load_file(File.expand_path("social_nets_db/db.yml", __dir__)).freeze
+	RECORDS = YAML.load_file(File.expand_path("social_nets_db/db.yml", __dir__)).freeze
 
 end
