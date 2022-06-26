@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.9] - 2022-06-26
+
+- Adds services
+
+## [0.0.8] - 2022-01-02
+
+- Adds services
+
 ## [0.0.7] - 2021-12-03
 
 - Improves and corrects user page method
