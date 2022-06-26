@@ -1,3 +1,13 @@
+angellist:
+  name: AngelList Jobs
+  icons:
+  color: "#"
+  domain: angel.co
+  tags:
+    - recruiting
+  profile_url:
+    by_username: https://${domain}/u/${uid}
+
 behance:
   name: Behance
   icons:
@@ -9,8 +19,8 @@ behance:
     - design
     - recruiting
   profile_url:
-    by_username: "https://${domain}/${uid}"
-    by_account_id: "https://${domain}/${uid}"
+    by_username: https://${domain}/${uid}
+    by_account_id: https://${domain}/${uid}
 
 bitchute:
   name: Bitchute
@@ -53,7 +63,7 @@ discord:
   tags:
     - gaming
   profile_url:
-    by_account_id: "https://discord.gg/${uid}"
+    by_account_id: https://discord.gg/${uid}
 
 dribble:
   name: Dribble
@@ -67,7 +77,7 @@ dribble:
     - portfolio
   profile_url:
     by_username: https://${domain}/${uid}
-    by_account_id: "https://${domain}/${uid}"
+    by_account_id: https://${domain}/${uid}
 
 email:
   name: E-mail
@@ -100,7 +110,7 @@ facebook:
     - social net
   profile_url:
     by_username: https://${domain}/${uid}
-    by_account_id: "https://${domain}/${uid}"
+    by_account_id: https://${domain}/${uid}
 
 fl.ru:
   name: FL
@@ -190,7 +200,7 @@ hh:
   tags:
     - recruiting
   profile_url:
-    by_account_id: "https://${domain}/resume/${uid}"
+    by_account_id: https://${domain}/resume/${uid}
 
 github:
   name: GitHub
@@ -203,7 +213,7 @@ github:
     - recruiting
   profile_url:
     by_username: https://${domain}/${uid}
-    by_account_id: "https://${domain}/${uid}"
+    by_account_id: https://${domain}/${uid}
 
 gitlab:
   name: GitLab
@@ -216,6 +226,16 @@ gitlab:
     - recruiting
   profile_url:
     by_username: https://${domain}/${uid}
+
+indeed:
+  name: Indeed
+  icons:
+  color: "#003A9B"
+  domain: indeed.com
+  tags:
+    - recruiting
+  profile_url:
+    by_account_id: https://my.${domain}/p/${uid}
 
 instagram:
   name: Instagram
@@ -376,6 +396,16 @@ remoteok:
   profile_url:
     by_username: https://${domain}/@${uid}
 
+revue:
+  name: Revue
+  icons:
+  color: "#E15718"
+  domain: getrevue.co
+  tags:
+    - blog
+  profile_url:
+    by_username: https://www.${domain}/profile/${uid}
+
 rokfin:
   name: Rokfin
   icons:
@@ -409,7 +439,7 @@ stackoverflow:
     - recruiting
     - programming
   profile_url:
-    by_account_id: "https://${domain}/users/${uid}?tab=profile"
+    by_account_id: https://${domain}/users/${uid}?tab=profile
 
 subscribestar:
   name: SubscribeStar
@@ -476,7 +506,7 @@ upwork:
     - freelancers
     - programming
   profile_url:
-    by_account_id: "https://${domain}/freelancers/~${uid}"
+    by_account_id: https://${domain}/freelancers/~${uid}
 
 vkontakte:
   name: Вконтакте
@@ -488,7 +518,7 @@ vkontakte:
     - social net
   profile_url:
     by_username: https://${domain}/${uid}
-    by_account_id: "https://${domain}/id${uid}"
+    by_account_id: https://${domain}/id${uid}
 
 youtube:
   name: YouTube
@@ -500,7 +530,7 @@ youtube:
     - video-hosting
   profile_url:
     by_username: https://${domain}/c/${uid}
-    by_account_id: "https://${domain}/channel/${uid}"
+    by_account_id: https://${domain}/channel/${uid}
 
 youtube_profile:
   name: YouTube profile
