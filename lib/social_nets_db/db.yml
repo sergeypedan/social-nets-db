@@ -55,6 +55,17 @@ blogger:
   profile_url:
     by_username: https://${uid}.blogspot.com
 
+boosty:
+  name: Boosty
+  icons:
+  color: "#f15f2c"
+  domain: boosty.to
+  tags:
+    - blog
+    - paywall
+  profile_url:
+    by_username: https://${domain}/${uid}
+
 discord:
   name: Discord
   icons:
@@ -441,6 +452,15 @@ stackoverflow:
   profile_url:
     by_account_id: https://${domain}/users/${uid}?tab=profile
 
+streamlabs:
+  name: StreamLabs
+  icons:
+  color: "#09161d"
+  domain: streamlabs.com
+  tags:
+  profile_url:
+    by_username: https://${domain}/${uid}
+
 subscribestar:
   name: SubscribeStar
   icons:
@@ -485,6 +505,18 @@ tiktok:
   profile_url:
     by_username: https://${domain}/@${uid}
 
+twitch:
+  name: Twitch
+  icons:
+  color: "#9147ff"
+  domain: twitch.tv
+  tags:
+    - social net
+    - video-hosting
+    - video-streaming
+  profile_url:
+    by_username: https://${domain}/${uid}
+
 twitter:
   name: Twitter
   icons:
@@ -528,6 +560,7 @@ youtube:
   domain: youtube.com
   tags:
     - video-hosting
+    - video-streaming
   profile_url:
     by_username: https://${domain}/c/${uid}
     by_account_id: https://${domain}/channel/${uid}

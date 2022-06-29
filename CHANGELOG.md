@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.10] - 2022-06-30
+
+Adds Boosty, Twitch, StreamLabs
+
 ## [0.0.9] - 2022-06-26
 
 - Adds services
