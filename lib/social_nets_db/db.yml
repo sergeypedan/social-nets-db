@@ -8,6 +8,17 @@ angellist:
   profile_url:
     by_username: https://${domain}/u/${uid}
 
+apple_podcast:
+  name: Apple Podcast
+  icons:
+    font_awesome_4: podcast
+  color: "#852dc4"
+  domain: podcasts.apple.com
+  tags:
+    - podcast
+  profile_url:
+    by_account_id: https://${domain}/en/podcast/${uid}
+
 behance:
   name: Behance
   icons:
@@ -65,6 +76,16 @@ boosty:
     - paywall
   profile_url:
     by_username: https://${domain}/${uid}
+
+castbox:
+  name: CastBox
+  icons:
+  color: "#f55b23"
+  domain: castbox.fm
+  tags:
+    - podcast
+  profile_url:
+    by_account_id: https://${domain}/vc/${uid}
 
 discord:
   name: Discord
@@ -179,6 +200,16 @@ gettr:
     - social net
   profile_url:
     by_username: https://${domain}/user/${uid}
+
+google_podcast:
+  name: Google Podcasts
+  icons:
+  color: "4285f4"
+  domain: podcasts.google.com
+  tags:
+    - podcast
+  profile_url:
+    by_account_id: https://${domain}/?feed=${uid}
 
 habr:
   name: Habrahabr
@@ -428,6 +459,17 @@ rokfin:
   profile_url:
     by_username: https://${domain}/${uid}
 
+rss:
+  name: RSS
+  icons:
+    font_awesome_4: "rss"
+  color: "#f26522"
+  domain:
+  tags:
+    - rss
+  profile_url:
+    by_username: ${uid}
+
 rumble:
   name: Rumble
   icons:
@@ -439,6 +481,18 @@ rumble:
     - video-hosting
   profile_url:
     by_username: https://${domain}/c/${uid}
+
+soundcloud:
+  name: SoundCloud
+  icons:
+    font_awesome_4: soundcloud
+  color: "#ff8800"
+  domain: soundcloud.com
+  tags:
+    - music
+    - podcast
+  profile_url:
+    by_account_id: https://${domain}/${uid}
 
 stackoverflow:
   name: StackOverflow
@@ -551,6 +605,18 @@ vkontakte:
   profile_url:
     by_username: https://${domain}/${uid}
     by_account_id: https://${domain}/id${uid}
+
+yandex_music_album:
+  name: Яндекс.Музыка / Альбом
+  icons:
+    font_awesome_4: "youtube"
+  color: "#f33"
+  domain: music.yandex.ru
+  tags:
+    - music
+    - podcast
+  profile_url:
+    by_account_id: https://${domain}/album/${uid}
 
 youtube:
   name: YouTube

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.11] - 2023-10-01
+
+Adds Apple podcasts, Google podcasts, Castbox, SoundCloud, RSS, Yandex.Music
+
 ## [0.0.10] - 2022-06-30
 
 Adds Boosty, Twitch, StreamLabs
