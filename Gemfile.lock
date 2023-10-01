@@ -1,61 +1,70 @@
 PATH
   remote: .
   specs:
-    social_nets_db (0.0.7)
+    social_nets_db (0.0.11)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    bundler-audit (0.9.0.1)
+    base64 (0.1.1)
+    bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
     byebug (11.1.3)
     coderay (1.1.3)
-    diff-lcs (1.4.4)
+    diff-lcs (1.5.0)
+    json (2.6.3)
+    language_server-protocol (3.17.0.3)
     method_source (1.0.0)
-    parallel (1.21.0)
-    parser (3.0.3.1)
+    parallel (1.23.0)
+    parser (3.2.2.3)
       ast (~> 2.4.1)
-    pry (0.14.1)
+      racc
+    pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.8.0)
+    pry-byebug (3.10.1)
       byebug (~> 11.0)
-      pry (~> 0.10)
-    rainbow (3.0.0)
+      pry (>= 0.13, < 0.15)
+    racc (1.7.1)
+    rainbow (3.1.1)
     rake (13.0.6)
-    regexp_parser (2.1.1)
-    rexml (3.2.5)
-    rspec (3.10.0)
-      rspec-core (~> 3.10.0)
-      rspec-expectations (~> 3.10.0)
-      rspec-mocks (~> 3.10.0)
-    rspec-core (3.10.1)
-      rspec-support (~> 3.10.0)
-    rspec-expectations (3.10.1)
+    regexp_parser (2.8.1)
+    rexml (3.2.6)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.2)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.10.0)
-    rspec-mocks (3.10.2)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.10.0)
-    rspec-support (3.10.3)
-    rubocop (1.23.0)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.1)
+    rubocop (1.56.4)
+      base64 (~> 0.1.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.0.0.0)
+      parser (>= 3.2.2.3)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
-      rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.1, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.14.0)
-      parser (>= 3.0.1.1)
-    ruby-progressbar (1.11.0)
-    thor (1.1.0)
-    unicode-display_width (2.1.0)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.29.0)
+      parser (>= 3.2.1.0)
+    ruby-progressbar (1.13.0)
+    thor (1.2.2)
+    unicode-display_width (2.4.2)
 
 PLATFORMS
+  arm64-darwin-21
   x86_64-darwin-17
 
 DEPENDENCIES
@@ -69,4 +78,4 @@ DEPENDENCIES
   social_nets_db!
 
 BUNDLED WITH
-   2.2.27
+   2.4.19
