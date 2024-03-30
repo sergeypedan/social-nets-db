@@ -482,7 +482,7 @@ rumble:
   profile_url:
     by_username: https://${domain}/c/${uid}
 
-soundcloud:
+soundcloud_user:
   name: SoundCloud
   icons:
     font_awesome_4: soundcloud
@@ -492,7 +492,19 @@ soundcloud:
     - music
     - podcast
   profile_url:
-    by_account_id: https://${domain}/${uid}
+    by_username: https://${domain}/${uid}
+
+soundcloud_rss:
+  name: SoundCloud RSS
+  icons:
+    font_awesome_4: soundcloud
+  color: "#ff8800"
+  domain: soundcloud.com
+  tags:
+    - music
+    - podcast
+  profile_url:
+    by_account_id: http://feeds.${domain}/users/soundcloud:users:${uid}/sounds.rss
 
 stackoverflow:
   name: StackOverflow

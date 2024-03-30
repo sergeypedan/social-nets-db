@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.12] - 2023-10-01
+
+Adds SoundCloud RSS, fixes base SoundCloud
+
 ## [0.0.11] - 2023-10-01
 
 Adds Apple podcasts, Google podcasts, Castbox, SoundCloud, RSS, Yandex.Music
